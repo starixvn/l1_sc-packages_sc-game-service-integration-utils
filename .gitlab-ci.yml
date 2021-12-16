@@ -1,0 +1,10 @@
+variables:
+    PROJECT_NAME: sc-game-service-stubs
+
+stages:
+    - publish
+
+include:
+    - project: "ci/common-ci"
+      ref: master
+      file: "npm/publish-npm.gitlab-ci.yml"

@@ -1,0 +1,4 @@
+**/.vscode
+.prettierignore
+.prettierrc
+.gitlab-ci.yml
