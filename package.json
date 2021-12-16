@@ -1,7 +1,7 @@
 {
   "name": "sc-game-service-integration-utils",
   "version": "1.0.0-beta.3",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "author": {
     "email": "pentagon@luminetsoft.com",
