@@ -20,7 +20,8 @@
     "test-coverage": "jest --collect-coverage --passWithNoTests"
   },
   "dependencies": {
-    "sc-game-base": "^2.1.0"
+    "sc-game-base": "^2.1.0",
+    "socket.io-client": "^4.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
