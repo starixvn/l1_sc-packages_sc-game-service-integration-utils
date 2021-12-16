@@ -1,7 +1,7 @@
 import { userInfos as UserInfoModel, users as UserModel, userSessions as UserSessionModel } from "sc-base-database";
 import { PartnerConfigs, CurrencyGroups, Currencies, CurrencyGroupGames } from "sc-game-base/src/core/models";
 
-export const createDummyUser = async (memberId, memberName, currencyName, currencyCode) => {
+export const createDummyUser = async (memberId, memberName, currencyName, currencyCode, partnerId) => {
     await createPartnerConfig(partnerId);
     const currencyGroup = await createCurrencyGroup(partnerId);
     await createCurrency(currencyGroup._id);
