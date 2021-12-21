@@ -15,13 +15,13 @@ export const createDummyUsers = async (gameId) => {
     const currencyGroup = await createCurrencyGroup(partnerId);
     await createCurrency(currencyGroup._id);
     await createCurrencyGroupGames(currencyGroup._id);
-    await createDummyUser(normalUser);
+    await createDummyUser(normalUser, currencyGroup._id);
 };
 
-export const createDummyUser = async ({ memberId, memberName, currencyName, currencyCode }) => {
+export const createDummyUser = async ({ memberId, memberName, currencyName, currencyCode }, currencyGroupId) => {
     const user = await createUserRecord(memberId, memberName, currencyName);
     const userInfo = await createUserInfoRecord(user);
-    const userSession = await createUserSessionRecord(user, currencyCode, currencyGroup._id);
+    const userSession = await createUserSessionRecord(user, currencyCode, currencyGroupId);
 
     return {
         user,

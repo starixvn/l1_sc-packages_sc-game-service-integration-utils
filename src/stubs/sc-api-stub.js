@@ -24,7 +24,7 @@ const getBetLimit = (apiUrl) => {
 
 const getBalance = (apiUrl) => {
     nock(apiUrl)
-        .post("/Member/GetBalance")
+        .post("/Member/Balance")
         .reply(200, {
             timeStamp: "2020/03/19 15:31:00.010 +00:00",
             result: {
