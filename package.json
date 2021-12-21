@@ -9,17 +9,18 @@
   },
   "type": "module",
   "scripts": {
-    "reg": "npm set registry http://npm.lumigame.com",
+    "reg": "npm set registry https://npm.lumigame.com",
     "ver-patch": "npm version patch",
     "ver-minor": "npm version minor",
     "beta-ver": "npm version prerelease --preid beta",
-    "pub": "npm publish --registry http://npm.lumigame.com",
-    "pub-beta": "npm publish --registry http://npm.lumigame.com --tag beta",
+    "pub": "npm publish --registry https://npm.lumigame.com",
+    "pub-beta": "npm publish --registry https://npm.lumigame.com --tag beta",
     "semantic-release": "semantic-release",
     "test": "jest --passWithNoTests",
     "test-coverage": "jest --collect-coverage --passWithNoTests"
   },
   "dependencies": {
+    "nock": "^13.2.1",
     "sc-game-base": "2.1.1-beta.9",
     "socket.io-client": "^4.4.0"
   },

@@ -1,12 +1,24 @@
 import { userInfos as UserInfoModel, users as UserModel, userSessions as UserSessionModel } from "sc-base-database";
 import { PartnerConfigs, CurrencyGroups, Currencies, CurrencyGroupGames } from "sc-game-base/src/core/models";
 
-export const createDummyUser = async (memberId, memberName, currencyName, currencyCode, partnerId) => {
-    await createPartnerConfig(partnerId);
+export const partnerId = "dummy-partner-id";
+
+export const normalUser = {
+    memberId: 1,
+    memberName: "NormalUser",
+    currencyName: "$US",
+    currencyCode: "USD",
+};
+
+export const createDummyUsers = async (gameId) => {
+    await createPartnerConfig(gameId);
     const currencyGroup = await createCurrencyGroup(partnerId);
     await createCurrency(currencyGroup._id);
     await createCurrencyGroupGames(currencyGroup._id);
+    await createDummyUser(normalUser);
+};
 
+export const createDummyUser = async ({ memberId, memberName, currencyName, currencyCode }) => {
     const user = await createUserRecord(memberId, memberName, currencyName);
     const userInfo = await createUserInfoRecord(user);
     const userSession = await createUserSessionRecord(user, currencyCode, currencyGroup._id);
@@ -26,7 +38,7 @@ const createUserRecord = async (memberId, memberName, currency) => {
             lastDate: new Date(),
             lastLogin: new Date(),
             regDate: new Date(),
-            partnerId: "dummy-partner-id",
+            partnerId: partnerId,
             memberId: memberId,
             memberName: memberName,
             currency: currency,
@@ -88,12 +100,12 @@ const createUserSessionRecord = async (user, currencyCode, currencyGroupId) => {
     });
 };
 
-const createPartnerConfig = async (partnerId) => {
+const createPartnerConfig = async (gameId) => {
     const config = {
-        partnerId,
+        partnerId: partnerId,
         type: "game_site_exclusions",
         value: {
-            2: ["test"],
+            [gameId]: ["test"],
         },
     };
 
