@@ -5,7 +5,7 @@ export const partnerId = "dummy-partner-id";
 
 export const normalUser = { memberId: 1, memberName: "NormalUser", currencyName: "$US", currencyCode: "USD" };
 
-export const errorUser = { memberId: 2, memberName: "NormalUser", currencyName: "$US", currencyCode: "USD" };
+export const errorUser = { memberId: 2, memberName: "ErrorUser", currencyName: "$US", currencyCode: "USD" };
 
 export const createDummyUsers = async (gameId, gameConfig) => {
     await createPartnerConfig(gameId);
