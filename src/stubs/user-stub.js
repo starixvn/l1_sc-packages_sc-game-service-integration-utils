@@ -1,21 +1,19 @@
 import { userInfos as UserInfoModel, users as UserModel, userSessions as UserSessionModel } from "sc-base-database";
-import { PartnerConfigs, CurrencyGroups, Currencies, CurrencyGroupGames } from "sc-game-base/src/core/models";
+import { Currencies, CurrencyGroupGames, CurrencyGroups, PartnerConfigs } from "sc-game-base/src/core/models";
 
 export const partnerId = "dummy-partner-id";
 
-export const normalUser = {
-    memberId: 1,
-    memberName: "NormalUser",
-    currencyName: "$US",
-    currencyCode: "USD",
-};
+export const normalUser = { memberId: 1, memberName: "NormalUser", currencyName: "$US", currencyCode: "USD" };
 
-export const createDummyUsers = async (gameId) => {
+export const errorUser = { memberId: 2, memberName: "NormalUser", currencyName: "$US", currencyCode: "USD" };
+
+export const createDummyUsers = async (gameId, gameConfig) => {
     await createPartnerConfig(gameId);
     const currencyGroup = await createCurrencyGroup(partnerId);
     await createCurrency(currencyGroup._id);
-    await createCurrencyGroupGames(currencyGroup._id);
+    await createCurrencyGroupGames(currencyGroup._id, gameId, gameConfig);
     await createDummyUser(normalUser, currencyGroup._id);
+    await createDummyUser(errorUser, currencyGroup._id);
 };
 
 export const createDummyUser = async ({ memberId, memberName, currencyName, currencyCode }, currencyGroupId) => {
@@ -131,26 +129,13 @@ const createCurrency = async (groupId) => {
     return Currencies.create(currency);
 };
 
-const createCurrencyGroupGames = async (groupId) => {
+const createCurrencyGroupGames = async (groupId, gameId, gameConfig) => {
     const data = {
-        gameId: 2,
-        gameName: "xocxoc",
         enabled: true,
-        minBet: 1,
-        maxBet: 3000,
-        maxBetPerChoices: { even: 3000, odd: 3000, red3: 3000, white3: 3000, red4: 1000, white4: 1000, red2: 3000 },
         chips: ["1", "2", "5", "10", "50", "100", "200", "500", "1000", "2000", "3000"],
         stakeLevels: [],
         groupId: groupId,
     };
 
-    return CurrencyGroupGames.findOneAndUpdate(
-        {
-            gameId: 2,
-            enabled: true,
-            groupId: groupId,
-        },
-        data,
-        { new: true, upsert: true }
-    );
+    return CurrencyGroupGames.create({ gameId, ...gameConfig, ...data });
 };

@@ -1,15 +1,13 @@
+import matches from "lodash.matches";
 import nock from "nock";
 
-export const init = (apiUrl) => {
-    getBetLimit(apiUrl);
-    getBalance(apiUrl);
-    placeBet(apiUrl);
-    endGame(apiUrl);
-};
+import { errorUser, normalUser } from "./user-stub";
 
-const getBetLimit = (apiUrl) => {
+export const initAPIStub = (apiUrl) => {
+    const normalUserRequestBody = { ObCustId: normalUser.memberId };
+    const errorUserRequestBody = { ObCustId: errorUser.memberId };
     nock(apiUrl)
-        .post("/Member/GetBetLimit")
+        .post("/Member/GetBetLimit", matches(normalUserRequestBody))
         .reply(200, {
             timeStamp: "2020/03/19 15:31:00.010 +00:00",
             result: {
@@ -19,12 +17,8 @@ const getBetLimit = (apiUrl) => {
                 minBet: 0.01,
                 maxBet: 3000,
             },
-        });
-};
-
-const getBalance = (apiUrl) => {
-    nock(apiUrl)
-        .post("/Member/Balance")
+        })
+        .post("/Member/Balance", matches(normalUserRequestBody))
         .reply(200, {
             timeStamp: "2020/03/19 15:31:00.010 +00:00",
             result: {
@@ -33,12 +27,8 @@ const getBalance = (apiUrl) => {
                 errorDescription: "Success",
                 balance: 25000,
             },
-        });
-};
-
-const placeBet = (apiUrl) => {
-    nock(apiUrl)
-        .post("/Member/PlaceBet")
+        })
+        .post("/Member/PlaceBet", matches(normalUserRequestBody))
         .reply(200, {
             timeStamp: "2020/03/19 15:31:00.010 +00:00",
             result: {
@@ -46,23 +36,41 @@ const placeBet = (apiUrl) => {
                 errorCode: 0,
                 errorDescription: "Success",
                 obTransId: 1763178465,
-                obCustId: "7784514",
+                obCustId: normalUser.memberId,
                 minBet: 1,
                 maxBet: 2000,
             },
-        });
-};
-
-const endGame = (apiUrl) => {
-    nock(apiUrl)
-        .post("/Member/EndGame")
+        })
+        .post("/Member/EndGame", matches(normalUserRequestBody))
         .reply(200, {
             timeStamp: "2020/03/19 15:31:00.010 +00:00",
             result: {
                 seq: "633b0a18-3cd8-4e59-8c1b-16fc301a5f53",
-                obCustId: 7784514,
+                obCustId: normalUser.memberId,
                 errorCode: 0,
                 errorDescription: "Success",
+            },
+        })
+        .post("/Member/PlaceBet", matches(errorUserRequestBody))
+        .reply(200, {
+            timeStamp: "2020/03/19 15:31:00.000 +00:00",
+            result: {
+                seq: "df829722-9826-4540-8a58-1d1c0feada93",
+                balance: 0.0,
+                obTransId: null,
+                errorCode: 3002,
+                errorDescription: "Player has insufficient funds.",
+                minBet: 0,
+                maxBet: 0,
+            },
+        })
+        .post("/Member/EndGame", matches(errorUserRequestBody))
+        .reply(200, {
+            timeStamp: "2020/03/19 15:31:00.000 +00:00",
+            result: {
+                seq: "633b0a18-3cd8-4e59-8c1b-16fc301a5f53",
+                errorCode: 1000,
+                errorDescription: "Unspecified Error.",
             },
         });
 };

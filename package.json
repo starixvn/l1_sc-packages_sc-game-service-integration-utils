@@ -20,6 +20,7 @@
     "test-coverage": "jest --collect-coverage --passWithNoTests"
   },
   "dependencies": {
+    "lodash.matches": "^4.6.0",
     "nock": "^13.2.1",
     "sc-game-base": "2.1.1-beta.9",
     "socket.io-client": "^4.4.0"
