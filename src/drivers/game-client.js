@@ -17,7 +17,7 @@ export const eventTypes = {
     getStatistics: "getStatistics",
 };
 
-export class GameClient {
+export class GameClientDriver {
     socket;
     gameName;
     onConnectFailed;
