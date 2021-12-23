@@ -3,13 +3,20 @@ import nock from "nock";
 
 import { errorUser, normalUser } from "./user-stub";
 
+const actions = {
+    getBetLimit: "/Member/GetBetLimit",
+    getBalance: "/Member/Balance",
+    placeBet: "/Member/PlaceBet",
+    endGame: "/Member/EndGame",
+};
+
 export const initAPIStub = (apiUrl) => {
     const normalUserRequestBody = { ObCustId: normalUser.memberId };
     const errorUserRequestBody = { ObCustId: errorUser.memberId };
     const successResult = { errorCode: 0, errorDescription: "Success" };
 
     nock(apiUrl)
-        .post("/Member/GetBetLimit", matches(normalUserRequestBody))
+        .post(actions.getBetLimit, matches(normalUserRequestBody))
         .reply(200, {
             result: {
                 ...successResult,
@@ -17,14 +24,14 @@ export const initAPIStub = (apiUrl) => {
                 maxBet: 3000,
             },
         })
-        .post("/Member/Balance", matches(normalUserRequestBody))
+        .post(actions.getBalance, matches(normalUserRequestBody))
         .reply(200, {
             result: {
                 ...successResult,
                 balance: 25000,
             },
         })
-        .post("/Member/PlaceBet", matches(normalUserRequestBody))
+        .post(actions.placeBet, matches(normalUserRequestBody))
         .reply(200, {
             result: {
                 balance: 24250,
@@ -35,14 +42,14 @@ export const initAPIStub = (apiUrl) => {
                 maxBet: 2000,
             },
         })
-        .post("/Member/EndGame", matches(normalUserRequestBody))
+        .post(actions.endGame, matches(normalUserRequestBody))
         .reply(200, {
             result: {
                 obCustId: normalUser.memberId,
                 ...successResult,
             },
         })
-        .post("/Member/PlaceBet", matches(errorUserRequestBody))
+        .post(actions.placeBet, matches(errorUserRequestBody))
         .reply(200, {
             result: {
                 balance: 0.0,
@@ -53,7 +60,7 @@ export const initAPIStub = (apiUrl) => {
                 maxBet: 0,
             },
         })
-        .post("/Member/EndGame", matches(errorUserRequestBody))
+        .post(actions.endGame, matches(errorUserRequestBody))
         .reply(200, {
             result: {
                 errorCode: 1000,
