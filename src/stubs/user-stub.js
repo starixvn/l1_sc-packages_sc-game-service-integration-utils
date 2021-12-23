@@ -1,22 +1,24 @@
 import { userInfos as UserInfoModel, users as UserModel, userSessions as UserSessionModel } from "sc-base-database";
-import { Currencies, CurrencyGroupGames, CurrencyGroups, PartnerConfigs } from "sc-game-base/src/core/models";
 
-export const partnerId = "dummy-partner-id";
+export const normalUser = { memberId: 1, memberName: "NormalUser" };
 
-export const normalUser = { memberId: 1, memberName: "NormalUser", currencyName: "$US", currencyCode: "USD" };
+export const errorUser = { memberId: 2, memberName: "ErrorUser" };
 
-export const errorUser = { memberId: 2, memberName: "ErrorUser", currencyName: "$US", currencyCode: "USD" };
+export const internalServerErrorUser = { memberId: 3, memberName: "InternalServerErrorUser" };
 
-export const createDummyUsers = async (gameId, gameConfig) => {
-    await createPartnerConfig(gameId);
-    const currencyGroup = await createCurrencyGroup(partnerId);
-    await createCurrency(currencyGroup._id);
-    await createCurrencyGroupGames(currencyGroup._id, gameId, gameConfig);
-    await createDummyUser(normalUser, currencyGroup._id);
-    await createDummyUser(errorUser, currencyGroup._id);
+export const createDummyUsers = async (currency) => {
+    await createDummyUser(normalUser.memberId, normalUser.memberName, currency.groupId, currency.code, currency.name);
+    await createDummyUser(errorUser.memberId, errorUser.memberName, currency.groupId, currency.code, currency.name);
+    await createDummyUser(
+        internalServerErrorUser.memberId,
+        internalServerErrorUser.memberName,
+        currency.groupId,
+        currency.code,
+        currency.name
+    );
 };
 
-export const createDummyUser = async ({ memberId, memberName, currencyName, currencyCode }, currencyGroupId) => {
+export const createDummyUser = async (memberId, memberName, currencyGroupId, currencyCode, currencyName) => {
     const user = await createUserRecord(memberId, memberName, currencyName);
     const userInfo = await createUserInfoRecord(user);
     const userSession = await createUserSessionRecord(user, currencyCode, currencyGroupId);
@@ -96,46 +98,4 @@ const createUserSessionRecord = async (user, currencyCode, currencyGroupId) => {
         new: true,
         upsert: true,
     });
-};
-
-const createPartnerConfig = async (gameId) => {
-    const config = {
-        partnerId: partnerId,
-        type: "game_site_exclusions",
-        value: {
-            [gameId]: ["test"],
-        },
-    };
-
-    return PartnerConfigs.create(config);
-};
-
-const createCurrencyGroup = async (partnerId) => {
-    const currencyGroup = { name: "USD Group", enabled: true, partnerId };
-    return CurrencyGroups.create(currencyGroup);
-};
-
-const createCurrency = async (groupId) => {
-    const currency = {
-        name: "$US",
-        code: "USD",
-        multiplier: 1,
-        enabled: true,
-        isTest: false,
-        partnerId: "dummy-partner-id",
-        groupId: groupId,
-    };
-
-    return Currencies.create(currency);
-};
-
-const createCurrencyGroupGames = async (groupId, gameId, gameConfig) => {
-    const data = {
-        enabled: true,
-        chips: ["1", "2", "5", "10", "50", "100", "200", "500", "1000", "2000", "3000"],
-        stakeLevels: [],
-        groupId: groupId,
-    };
-
-    return CurrencyGroupGames.create({ gameId, ...gameConfig, ...data });
 };

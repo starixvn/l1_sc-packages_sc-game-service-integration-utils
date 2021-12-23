@@ -1,7 +1,7 @@
 import matches from "lodash.matches";
 import nock from "nock";
 
-import { errorUser, normalUser } from "./user-stub";
+import { errorUser, internalServerErrorUser, normalUser } from "./user-stub";
 
 const actions = {
     getBetLimit: "/Member/GetBetLimit",
@@ -13,6 +13,7 @@ const actions = {
 export const initAPIStub = (apiUrl) => {
     const normalUserRequestBody = { ObCustId: normalUser.memberId };
     const errorUserRequestBody = { ObCustId: errorUser.memberId };
+    const internalServerErrorUserRequestBody = { ObCustId: internalServerErrorUser.memberId };
     const successResult = { errorCode: 0, errorDescription: "Success" };
 
     nock(apiUrl)
@@ -66,5 +67,7 @@ export const initAPIStub = (apiUrl) => {
                 errorCode: 1000,
                 errorDescription: "Unspecified Error.",
             },
-        });
+        })
+        .post(actions.placeBet.replace, matches(internalServerErrorUser))
+        .reply(500);
 };
