@@ -7,21 +7,15 @@ export const errorUser = { memberId: 2, memberName: "ErrorUser" };
 export const internalServerErrorUser = { memberId: 3, memberName: "InternalServerErrorUser" };
 
 export const createDummyUsers = async (currency) => {
-    await createDummyUser(normalUser.memberId, normalUser.memberName, currency.groupId, currency.code, currency.name);
-    await createDummyUser(errorUser.memberId, errorUser.memberName, currency.groupId, currency.code, currency.name);
-    await createDummyUser(
-        internalServerErrorUser.memberId,
-        internalServerErrorUser.memberName,
-        currency.groupId,
-        currency.code,
-        currency.name
-    );
+    await createDummyUser(normalUser.memberId, normalUser.memberName, currency);
+    await createDummyUser(errorUser.memberId, errorUser.memberName, currency);
+    await createDummyUser(internalServerErrorUser.memberId, internalServerErrorUser.memberName, currency);
 };
 
-export const createDummyUser = async (memberId, memberName, currencyGroupId, currencyCode, currencyName) => {
-    const user = await createUserRecord(memberId, memberName, currencyName);
+export const createDummyUser = async (memberId, memberName, currency) => {
+    const user = await createUserRecord(memberId, memberName, currency.partnerId, currency.name);
     const userInfo = await createUserInfoRecord(user);
-    const userSession = await createUserSessionRecord(user, currencyCode, currencyGroupId);
+    const userSession = await createUserSessionRecord(user, currency.code, currency.groupId);
 
     return {
         user,
@@ -30,7 +24,7 @@ export const createDummyUser = async (memberId, memberName, currencyGroupId, cur
     };
 };
 
-const createUserRecord = async (memberId, memberName, currency) => {
+const createUserRecord = async (memberId, memberName, partnerId, currencyName) => {
     const user = {
         local: {
             username: `${memberId}_${memberName}`,
@@ -41,7 +35,7 @@ const createUserRecord = async (memberId, memberName, currency) => {
             partnerId: partnerId,
             memberId: memberId,
             memberName: memberName,
-            currency: currency,
+            currency: currencyName,
         },
     };
 

@@ -68,6 +68,6 @@ export const initAPIStub = (apiUrl) => {
                 errorDescription: "Unspecified Error.",
             },
         })
-        .post(actions.placeBet.replace, matches(internalServerErrorUser))
+        .post(actions.placeBet.replace, matches(internalServerErrorUserRequestBody))
         .reply(500);
 };
