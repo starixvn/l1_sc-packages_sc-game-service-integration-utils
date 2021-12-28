@@ -71,6 +71,10 @@ export class GameClientDriver {
         this.emit(eventTypes.inGame);
     }
 
+    sendGetHistoryEvent(page = 1) {
+        this.emit(eventTypes.getHistory, { page });
+    }
+
     sendBetEvent(betChoice, amount) {
         this.emit(eventTypes.bet, { betChoice, amount });
     }
