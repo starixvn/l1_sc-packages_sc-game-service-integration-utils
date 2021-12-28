@@ -47,6 +47,10 @@ export class GameClientDriver {
         this.socket && this.socket.disconnect();
     }
 
+    onSignedInEvent(eventHandler) {
+        this.on(eventTypes.signedIn, eventHandler);
+    }
+
     on(eventName, eventHandler) {
         this.socket.on(eventName, eventHandler);
     }
@@ -59,6 +63,18 @@ export class GameClientDriver {
         this.socket.removeListener(eventName, handler);
     }
 
+    sendSignInEvent() {
+        this.emit(eventTypes.signIn, this.userSession);
+    }
+
+    sendInGameEvent() {
+        this.emit(eventTypes.inGame);
+    }
+
+    sendBetEvent(betChoice, amount) {
+        this.emit(eventTypes.bet, { betChoice, amount });
+    }
+
     emit(eventName, ...args) {
         if (args.length) {
             this.socket.emit(eventName, ...args);
@@ -69,7 +85,7 @@ export class GameClientDriver {
 
     registerEvents() {
         this.on(eventTypes.connect, () => {
-            this.emit(eventTypes.signIn, this.userSession);
+            this.sendSignInEvent();
         });
 
         this.on(eventTypes.reconnect, () => {
