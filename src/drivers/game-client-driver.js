@@ -17,6 +17,8 @@ export const eventTypes = {
     getStatistics: "getStatistics",
 };
 
+const WAITING_PLACE_BET_TIMEOUT = 10000;
+
 export class GameClientDriver {
     socket;
     gameName;
@@ -47,8 +49,20 @@ export class GameClientDriver {
         this.socket && this.socket.disconnect();
     }
 
-    onSignedInEvent(eventHandler) {
+    handleSignedInEvent(eventHandler) {
         this.on(eventTypes.signedIn, eventHandler);
+    }
+
+    handleInGameEvent(eventHandler) {
+        this.on(this.gameName, eventHandler);
+    }
+
+    handleEndBetEvent(eventHandler) {
+        this.on(this.gameName, eventHandler);
+    }
+
+    handleGetHistoryEvent(eventHandler) {
+        this.on(this.gameName, eventHandler);
     }
 
     on(eventName, eventHandler) {
@@ -75,7 +89,8 @@ export class GameClientDriver {
         this.emit(eventTypes.getHistory, { page });
     }
 
-    sendBetEvent(betChoice, amount) {
+    async sendBetEvent(betChoice, amount) {
+        await new Promise((r) => setTimeout(r, WAITING_PLACE_BET_TIMEOUT));
         this.emit(eventTypes.bet, { betChoice, amount });
     }
 
