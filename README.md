@@ -1,1 +1,1 @@
-# Ultilities for Game service integration test
+# Utilities for Game service integration test
