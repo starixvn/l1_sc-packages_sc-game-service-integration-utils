@@ -1,40 +1,40 @@
 {
-  "name": "sc-game-service-integration-utils",
-  "version": "1.0.0-beta.18",
-  "main": "src/index.js",
-  "license": "MIT",
-  "author": {
-    "email": "pentagon@luminetsoft.com",
-    "name": "pentagon"
-  },
-  "type": "module",
-  "scripts": {
-    "reg": "npm set registry https://npm.lumigame.com",
-    "ver-patch": "npm version patch",
-    "ver-minor": "npm version minor",
-    "beta-ver": "npm version prerelease --preid beta",
-    "pub": "npm publish --registry https://npm.lumigame.com",
-    "pub-beta": "npm publish --registry https://npm.lumigame.com --tag beta",
-    "semantic-release": "semantic-release",
-    "test": "jest --passWithNoTests",
-    "test-coverage": "jest --collect-coverage --passWithNoTests"
-  },
-  "dependencies": {
-    "lodash.matches": "^4.6.0",
-    "nock": "^13.2.1",
-    "sc-game-base": "2.1.1-beta.7",
-    "socket.io-client": "^4.4.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "husky": "^7.0.2",
-    "sc-semantic-release": "^1.2.0",
-    "semantic-release": "^17.4.7"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    "name": "sc-game-service-integration-utils",
+    "version": "1.0.0-beta.18",
+    "main": "src/index.js",
+    "license": "MIT",
+    "author": {
+        "email": "pentagon@luminetsoft.com",
+        "name": "pentagon"
+    },
+    "type": "module",
+    "scripts": {
+        "reg": "npm set registry https://npm.lumigame.com",
+        "ver-patch": "npm version patch",
+        "ver-minor": "npm version minor",
+        "beta-ver": "npm version prerelease --preid beta",
+        "pub": "npm publish --registry https://npm.lumigame.com",
+        "pub-beta": "npm publish --registry https://npm.lumigame.com --tag beta",
+        "semantic-release": "semantic-release",
+        "test": "jest --passWithNoTests",
+        "test-coverage": "jest --collect-coverage --passWithNoTests"
+    },
+    "dependencies": {
+        "lodash.matches": "^4.6.0",
+        "nock": "^13.2.1",
+        "sc-game-base": "2.2.1",
+        "socket.io-client": "^4.4.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^13.1.0",
+        "@commitlint/config-conventional": "^13.1.0",
+        "husky": "^7.0.2",
+        "sc-semantic-release": "^1.2.0",
+        "semantic-release": "^17.4.7"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
     }
-  }
 }
