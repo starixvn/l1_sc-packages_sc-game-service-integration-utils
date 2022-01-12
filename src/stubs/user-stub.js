@@ -6,10 +6,13 @@ export const errorUser = { memberId: 2, memberName: "ErrorUser" };
 
 export const internalServerErrorUser = { memberId: 3, memberName: "InternalServerErrorUser" };
 
+export const endGameErrorUser = { memberId: 4, memberName: "EndGameErrorUser" };
+
 export const createDummyUsers = async (currency) => {
     await createDummyUser(normalUser.memberId, normalUser.memberName, currency);
     await createDummyUser(errorUser.memberId, errorUser.memberName, currency);
     await createDummyUser(internalServerErrorUser.memberId, internalServerErrorUser.memberName, currency);
+    await createDummyUser(endGameErrorUser.memberId, endGameErrorUser.memberName, currency);
 };
 
 export const createDummyUser = async (memberId, memberName, currency) => {

@@ -65,6 +65,10 @@ export class GameClientDriver {
         this.on(this.gameName, eventHandler);
     }
 
+    handleEndGameEvent(eventHandler) {
+        this.on(this.gameName, eventHandler);
+    }
+
     on(eventName, eventHandler) {
         this.socket.on(eventName, eventHandler);
     }
