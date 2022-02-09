@@ -3,9 +3,9 @@ import { gameConfigs as GameConfigModel } from "sc-base-database";
 export const createGameConfig = async (gameConfig) => {
     const defaultGameConfig = {
         enabled: true,
-        minbet: 10,
-        maxbet: true,
-        disabledround: 988976,
+        minbet: 1,
+        maxbet: 3000,
+        disabledround: 1,
         botenabled: false,
         maxbot: 0,
         bot_maxbet: 1000000,

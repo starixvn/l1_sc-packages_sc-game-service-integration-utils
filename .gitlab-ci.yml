@@ -1,10 +1,13 @@
 variables:
-    PROJECT_NAME: sc-game-service-stubs
+    PROJECT_NAME: sc-game-service-integration-utils
 
 stages:
+    - test
     - publish
-
 include:
+    - project: "ci/common-ci"
+      ref: master
+      file: "sonarqube/sonarqube.gitlab-ci.yml"
     - project: "ci/common-ci"
       ref: master
       file: "npm/publish-npm.gitlab-ci.yml"

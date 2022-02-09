@@ -1,9 +1,24 @@
 import { userInfos as UserInfoModel, users as UserModel, userSessions as UserSessionModel } from "sc-base-database";
 
-export const createDummyUser = async (memberId, memberName, currencyName, currencyCode, currencyGroupId) => {
-    const user = await createUserRecord(memberId, memberName, currencyName);
+export const normalUser = { memberId: 1, memberName: "NormalUser" };
+
+export const errorUser = { memberId: 2, memberName: "ErrorUser" };
+
+export const internalServerErrorUser = { memberId: 3, memberName: "InternalServerErrorUser" };
+
+export const endGameErrorUser = { memberId: 4, memberName: "EndGameErrorUser" };
+
+export const createDummyUsers = async (currency) => {
+    await createDummyUser(normalUser.memberId, normalUser.memberName, currency);
+    await createDummyUser(errorUser.memberId, errorUser.memberName, currency);
+    await createDummyUser(internalServerErrorUser.memberId, internalServerErrorUser.memberName, currency);
+    await createDummyUser(endGameErrorUser.memberId, endGameErrorUser.memberName, currency);
+};
+
+export const createDummyUser = async (memberId, memberName, currency) => {
+    const user = await createUserRecord(memberId, memberName, currency.partnerId, currency.name);
     const userInfo = await createUserInfoRecord(user);
-    const userSession = await createUserSessionRecord(user, currencyCode, currencyGroupId);
+    const userSession = await createUserSessionRecord(user, currency.code, currency.groupId);
 
     return {
         user,
@@ -12,7 +27,7 @@ export const createDummyUser = async (memberId, memberName, currencyName, curren
     };
 };
 
-const createUserRecord = async (memberId, memberName, currency) => {
+const createUserRecord = async (memberId, memberName, partnerId, currencyName) => {
     const user = {
         local: {
             username: `${memberId}_${memberName}`,
@@ -20,10 +35,10 @@ const createUserRecord = async (memberId, memberName, currency) => {
             lastDate: new Date(),
             lastLogin: new Date(),
             regDate: new Date(),
-            clientId: "dummy-partner-id",
+            partnerId: partnerId,
             memberId: memberId,
             memberName: memberName,
-            currency: currency,
+            currency: currencyName,
         },
     };
 
@@ -68,7 +83,7 @@ const createUserSessionRecord = async (user, currencyCode, currencyGroupId) => {
         currencyCode,
         currencyName: user.local.currency,
         currencyGroupId,
-        partnerId: user.local.clientId,
+        partnerId: user.local.partnerId,
         isTestCurrency: false,
         multiplier: 1,
         memberName: user.local.memberName,

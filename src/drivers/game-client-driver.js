@@ -17,7 +17,9 @@ export const eventTypes = {
     getStatistics: "getStatistics",
 };
 
-export class GameClient {
+const WAITING_PLACE_BET_TIMEOUT = 10000;
+
+export class GameClientDriver {
     socket;
     gameName;
     onConnectFailed;
@@ -47,6 +49,26 @@ export class GameClient {
         this.socket && this.socket.disconnect();
     }
 
+    handleSignedInEvent(eventHandler) {
+        this.on(eventTypes.signedIn, eventHandler);
+    }
+
+    handleInGameEvent(eventHandler) {
+        this.on(this.gameName, eventHandler);
+    }
+
+    handleEndBetEvent(eventHandler) {
+        this.on(this.gameName, eventHandler);
+    }
+
+    handleGetHistoryEvent(eventHandler) {
+        this.on(this.gameName, eventHandler);
+    }
+
+    handleEndGameEvent(eventHandler) {
+        this.on(this.gameName, eventHandler);
+    }
+
     on(eventName, eventHandler) {
         this.socket.on(eventName, eventHandler);
     }
@@ -59,6 +81,23 @@ export class GameClient {
         this.socket.removeListener(eventName, handler);
     }
 
+    sendSignInEvent() {
+        this.emit(eventTypes.signIn, this.userSession);
+    }
+
+    sendInGameEvent() {
+        this.emit(eventTypes.inGame);
+    }
+
+    sendGetHistoryEvent(page = 1) {
+        this.emit(eventTypes.getHistory, { page });
+    }
+
+    async sendBetEvent(betChoice, amount) {
+        await new Promise((r) => setTimeout(r, WAITING_PLACE_BET_TIMEOUT));
+        this.emit(eventTypes.bet, { betChoice, amount });
+    }
+
     emit(eventName, ...args) {
         if (args.length) {
             this.socket.emit(eventName, ...args);
@@ -69,7 +108,7 @@ export class GameClient {
 
     registerEvents() {
         this.on(eventTypes.connect, () => {
-            this.emit(eventTypes.signIn, this.userSession);
+            this.sendSignInEvent();
         });
 
         this.on(eventTypes.reconnect, () => {
