@@ -42,14 +42,14 @@ export const initAPIStub = (apiUrl) => {
                 obCustId: normalUser.memberId,
                 minBet: 1,
                 maxBet: 2000,
-                playerId: normalUser.playerId,
+                playerId: normalUser.memberId,
             },
         })
         .post(actions.endGame, matches(normalUserRequestBody))
         .reply(200, {
             result: {
                 obCustId: normalUser.memberId,
-                playerId: normalUser.playerId,
+                playerId: normalUser.memberId,
                 ...successResult,
             },
         })
@@ -71,7 +71,7 @@ export const initAPIStub = (apiUrl) => {
                 ...successResult,
                 obTransId: 1763178465,
                 obCustId: endGameErrorUser.memberId,
-                playerId: endGameErrorUser.playerId,
+                playerId: endGameErrorUser.memberId,
                 minBet: 1,
                 maxBet: 2000,
             },

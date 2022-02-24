@@ -41,6 +41,7 @@ const createUserRecord = async (memberId, memberName, partnerId, currencyName) =
             currency: currencyName,
             operatorId: partnerId,
             playerId: memberId,
+            playerName: playerName,
         },
     };
 
@@ -91,8 +92,9 @@ const createUserSessionRecord = async (user, currencyCode, currencyGroupId) => {
         memberName: user.local.memberName,
         siteName: "site-name",
         system: 1,
-        operatorId: user.local.operatorId,
+        operatorId: user.local.partnerId,
         playerId: user.local.memberId,
+        playerName: user.local.memberName,
     };
 
     return UserSessionModel.findOneAndUpdate({ userId: user.id }, userSession, {
