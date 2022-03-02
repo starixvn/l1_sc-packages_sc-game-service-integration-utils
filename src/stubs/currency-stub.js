@@ -19,6 +19,7 @@ const createCurrency = async (groupId, partnerId, currencyCode, currencyName) =>
         isTest: false,
         partnerId: partnerId,
         groupId: groupId,
+        operatorId: partnerId,
     };
 
     return Currencies.create(currency);
