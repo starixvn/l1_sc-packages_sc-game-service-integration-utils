@@ -1,3 +1,13 @@
+## [1.0.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.0.0...v1.0.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* upgrade db schema ([a9af419](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/a9af4197047bd6791d5618b1d62045e541a1c878))
+* upgrade game-base ([8363ab3](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/8363ab3d353670a8a4301fb832e1820ddbebdb73))
+* upgrade game-base 2.4.1-beta.2 ([434b8e6](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/434b8e684b53d7e3313cb59d4b91010866ca4756))
+* upgrade game-base@2.4.1-beta.4 ([94b622b](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/94b622b4cb2881d5966e47b42fa86bb0fa0d7164))
+
 # 1.0.0 (2022-02-09)
 
 
