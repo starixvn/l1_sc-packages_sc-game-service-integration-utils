@@ -41,7 +41,7 @@ const createUserRecord = async (memberId, memberName, partnerId, currencyName) =
             currency: currencyName,
             operatorId: partnerId,
             playerId: memberId,
-            playerName: playerName,
+            playerName: memberName,
         },
     };
 
