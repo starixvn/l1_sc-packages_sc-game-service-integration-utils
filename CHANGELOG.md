@@ -1,3 +1,10 @@
+## [1.0.3](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.0.2...v1.0.3) (2022-03-03)
+
+
+### Bug Fixes
+
+* reference error ([2545da5](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/2545da5028c47182108ac580da187a7c0afd6695))
+
 ## [1.0.2](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.0.1...v1.0.2) (2022-03-02)
 
 
