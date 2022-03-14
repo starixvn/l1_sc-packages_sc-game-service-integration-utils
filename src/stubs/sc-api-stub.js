@@ -11,11 +11,11 @@ const actions = {
 };
 
 export const initAPIStub = (apiUrl) => {
-    const normalUserRequestBody = { ObCustId: normalUser.memberId, PlayerId: normalUser.playerId };
-    const errorUserRequestBody = { ObCustId: errorUser.memberId, PlayerId: errorUser.playerId };
-    const internalServerErrorUserRequestBody = { ObCustId: internalServerErrorUser.memberId, PlayerId: internalServerErrorUser.playerId };
+    const normalUserRequestBody = { ObCustId: normalUser.memberId, PlayerId: normalUser.memberId };
+    const errorUserRequestBody = { ObCustId: errorUser.memberId, PlayerId: errorUser.memberId };
+    const internalServerErrorUserRequestBody = { ObCustId: internalServerErrorUser.memberId, PlayerId: internalServerErrorUser.memberId };
     const successResult = { errorCode: 0, errorDescription: "Success" };
-    const endGameErrorUserRequestBody = { ObCustId: endGameErrorUser.memberId, PlayerId: endGameErrorUser.playerId };
+    const endGameErrorUserRequestBody = { ObCustId: endGameErrorUser.memberId, PlayerId: endGameErrorUser.memberId };
 
     nock(apiUrl)
         .post(actions.getBetLimit, matches(normalUserRequestBody))
