@@ -1,3 +1,16 @@
+# [1.1.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.0.3...v1.1.0) (2022-03-14)
+
+
+### Bug Fixes
+
+* update release packages ([4ba0b78](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/4ba0b78bfec20413e51e4ab2374249befc55f429))
+* update sc-api-stub ([a08e551](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/a08e5514e305bd37301b18ab06b584365b97d279))
+
+
+### Features
+
+* update game base ([4b77d53](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/4b77d53e44ddfc43fd6a8d1d7281d5569f5dfa19))
+
 ## [1.0.3](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.0.2...v1.0.3) (2022-03-03)
 
 
