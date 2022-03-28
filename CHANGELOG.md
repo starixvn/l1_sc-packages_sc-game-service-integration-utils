@@ -1,3 +1,10 @@
+## [1.1.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.1.0...v1.1.1) (2022-03-28)
+
+
+### Bug Fixes
+
+* remove setTimeout from sendBetEvent ([d038ee5](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/d038ee5fc49e0e290094f6f707bbccd9ce73a2d5))
+
 # [1.1.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.0.3...v1.1.0) (2022-03-14)
 
 
