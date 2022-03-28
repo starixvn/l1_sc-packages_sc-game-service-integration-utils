@@ -93,8 +93,7 @@ export class GameClientDriver {
         this.emit(eventTypes.getHistory, { page });
     }
 
-    async sendBetEvent(betChoice, amount) {
-        await new Promise((r) => setTimeout(r, WAITING_PLACE_BET_TIMEOUT));
+    sendBetEvent(betChoice, amount) {
         this.emit(eventTypes.bet, { betChoice, amount });
     }
 
