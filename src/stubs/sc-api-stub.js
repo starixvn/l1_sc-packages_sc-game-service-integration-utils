@@ -18,6 +18,7 @@ export const initAPIStub = (apiUrl) => {
     const endGameErrorUserRequestBody = { ObCustId: endGameErrorUser.memberId, PlayerId: endGameErrorUser.memberId };
 
     nock(apiUrl)
+        .persist()
         .post(actions.getBetLimit, matches(normalUserRequestBody))
         .reply(200, {
             result: {
