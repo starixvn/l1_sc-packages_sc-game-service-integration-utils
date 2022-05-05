@@ -1,3 +1,18 @@
+# [1.2.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.1.2...v1.2.0) (2022-05-05)
+
+
+### Bug Fixes
+
+* operator token ([0a62616](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/0a62616e1b3fc40811b2c9122813857872c54406))
+* upgrade sc-game-base 2.8.1-beta.2 ([e6dbaae](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/e6dbaae6fc2377ab61b2221f60757528b8f09259))
+* upgrade sc-game-base 2.9.0 ([f71f19c](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/f71f19cfd4cc1eeb3a0ba98d6627751440506ab0))
+
+
+### Features
+
+* upgrade sc-game-base@2.7.2-beta.3 ([0833bf4](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/0833bf4327617a2dc1657b6b89929582f61f5e36))
+* upgrade sc-game-base@2.8.1-beta.0 ([cdbdd5f](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/cdbdd5f64fd31d52c60ae18d23ade81b60887eda))
+
 ## [1.1.2](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.1.1...v1.1.2) (2022-03-29)
 
 
