@@ -4,10 +4,10 @@ import nock from "nock";
 import { endGameErrorUser, errorUser, internalServerErrorUser, normalUser } from "./user-stub";
 
 const actions = {
-    getBetLimit: "/Member/GetBetLimit",
-    getBalance: "/Member/Balance",
-    placeBet: "/Member/PlaceBet",
-    endGame: "/Member/EndGame",
+    getBetLimit: "/Player/GetBetLimit",
+    getBalance: "/Player/Balance",
+    placeBet: "/Player/PlaceBet",
+    endGame: "/Player/EndGame",
 };
 
 export const initAPIStub = (apiUrl) => {
