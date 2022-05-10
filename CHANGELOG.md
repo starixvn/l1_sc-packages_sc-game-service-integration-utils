@@ -1,3 +1,10 @@
+## [1.2.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.0...v1.2.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* update api stub - rename from Member to Player ([4d2e57c](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/4d2e57c18d9d8622edf755e427cc26414ff2b399))
+
 # [1.2.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.1.2...v1.2.0) (2022-05-05)
 
 
