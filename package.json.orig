@@ -1,6 +1,10 @@
 {
     "name": "sc-game-service-integration-utils",
+<<<<<<< HEAD
     "version": "1.2.2-beta.0",
+=======
+    "version": "1.2.2",
+>>>>>>> 1.2.2-beta.0
     "main": "src/index.js",
     "license": "MIT",
     "author": {
@@ -22,11 +26,7 @@
     "dependencies": {
         "lodash.matches": "^4.6.0",
         "nock": "^13.2.1",
-<<<<<<< HEAD
         "sc-game-base": "3.0.3-beta.0",
-=======
-        "sc-game-base": "3.0.2-beta.1",
->>>>>>> fix: upgrade sc-game-base@3.0.2-beta.1
         "socket.io-client": "^4.4.0"
     },
     "devDependencies": {
