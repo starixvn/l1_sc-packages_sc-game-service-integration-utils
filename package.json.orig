@@ -3,8 +3,8 @@
 <<<<<<< HEAD
     "version": "1.2.6-beta.1",
 =======
-    "version": "1.2.4-beta.3",
->>>>>>> 1.2.4-beta.3
+    "version": "1.2.4",
+>>>>>>> fix: separate branch
     "main": "src/index.js",
     "license": "MIT",
     "author": {
@@ -26,7 +26,11 @@
     "dependencies": {
         "lodash.matches": "^4.6.0",
         "nock": "^13.2.1",
+<<<<<<< HEAD
         "sc-game-base": "3.0.4-beta.1",
+=======
+        "sc-game-base": "3.0.5-beta.0",
+>>>>>>> fix: separate branch
         "socket.io-client": "^4.4.0"
     },
     "devDependencies": {
