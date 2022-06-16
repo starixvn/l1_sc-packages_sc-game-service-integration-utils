@@ -5,6 +5,7 @@ import { userInfos as UserInfoModel, userSessions as UserSessionModel } from "sc
 
 const actions = {
     verifySession: "/auth/session/verify",
+    signInGame: "/users/signInGame",
 };
 
 const defaultUsers = [normalUser, errorUser, internalServerErrorUser, endGameErrorUser];
@@ -35,6 +36,11 @@ export const stubUserService = async (appConfigs, users = null) => {
             nock(appConfigs.userServiceSettings.url)
                 .persist()
                 .post(actions.verifySession, matches(params), matches(requestConfigs))
+                .reply(200, result);
+
+            nock(appConfigs.userServiceSettings.url)
+                .persist()
+                .post(actions.signInGame, matches(params), () => true)
                 .reply(200, result);
         })
     );
