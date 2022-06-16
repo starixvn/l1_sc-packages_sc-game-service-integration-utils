@@ -27,21 +27,12 @@ export const stubUserService = async (appConfigs, users = null) => {
                 browserUserAgent: userSession.browserUserAgent,
             };
 
-            const result = {
-                isSuccessful: true,
-                user: userInfo,
-                userSession,
-            };
-
             nock(appConfigs.userServiceSettings.url)
                 .persist()
                 .post(actions.verifySession, matches(params), matches(requestConfigs))
-                .reply(200, result);
-
-            nock(appConfigs.userServiceSettings.url)
-                .persist()
+                .reply(200, { isSuccessful: true, user: userInfo, userSession })
                 .post(actions.signInGame, matches(params), () => true)
-                .reply(200, result);
+                .reply(200, { isSuccessful: true, ...userSession, id: userSession.userId, currency: userSession.currencyName });
         })
     );
 };
