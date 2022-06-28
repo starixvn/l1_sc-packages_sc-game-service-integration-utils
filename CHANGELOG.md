@@ -1,3 +1,26 @@
+## [1.2.2](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.1...v1.2.2) (2022-06-28)
+
+
+### Bug Fixes
+
+* add bot user ([5598bf8](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/5598bf8cf3b47c2af7e2eb8a678d64d56b6b12f5))
+* combine authenticateSettings ([52343c7](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/52343c77d1864ccd34ecc84ff88a871a209d509f))
+* operator token for sc ([0b3ec10](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/0b3ec107ffd3f11a751af15f12b993ea77734d08))
+* rebase branch ([eef74b7](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/eef74b731b6a9eeea26fdac4c2d1d11ff17e9435))
+* rebase branch ([d745a51](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/d745a51240e9b24eef62e068995597f889f1750a))
+* revert verify session ([b2edda6](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/b2edda682b8eef79a011aa7307c1e40ef3bdebb4))
+* review code ([5a80294](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/5a8029433f2f2d6a9482bfc54ece37a5c672b13b))
+* separate branch ([2962420](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/29624209efde5f83179632ceb7677827e685d15c))
+* stub sign in game ([23c865b](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/23c865b666e167a33c369f2cde39c32c6ed8c12a))
+* stub user service ([9c55717](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/9c557177e440078a038a979422c82bd43b33d06e))
+* update blocking time ([4fa1fd0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/4fa1fd0effef79d2da798deca150a061ff4dd393))
+* update place bet blocking time ([91d5505](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/91d550562f73622bf82afd2ef0e6f6d82c1d4d29))
+* upgrade sc-game-base@3.0.3-beta.3 ([229bb39](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/229bb39197d3d72c568f9e6c3fa3e07e2260a44e))
+* upgrade sc-game-base@3.0.3-beta.3 ([0ea0efc](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/0ea0efca17821f2f6ab4d3ff12f69285adc6417e))
+* upgrade sc-game-base@3.0.3-beta.4 ([2b96e40](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/2b96e4033a9bbe07d8a6038557afadeed293e0ba))
+* verify session ([643b4d3](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/643b4d3a847609fba9cf894bca954dc4e119179a))
+* verify session ([df34405](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/df3440588b522127ec95af4b2e490b90c78c2563))
+
 ## [1.2.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.0...v1.2.1) (2022-05-10)
 
 
