@@ -5,3 +5,4 @@ export * from "./user-stub";
 export * from "./currency-group-games-stub";
 export * from "./currency-stub";
 export * from "./partner-stub";
+export * from "./user-service-stub";

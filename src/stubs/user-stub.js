@@ -8,16 +8,22 @@ export const internalServerErrorUser = { memberId: 3, memberName: "InternalServe
 
 export const endGameErrorUser = { memberId: 4, memberName: "EndGameErrorUser" };
 
+export const botUser1 = { memberId: 5, memberName: "Bot1" };
+
+export const botUser2 = { memberId: 6, memberName: "Bot2" };
+
 export const createDummyUsers = async (currency) => {
     await createDummyUser(normalUser.memberId, normalUser.memberName, currency);
     await createDummyUser(errorUser.memberId, errorUser.memberName, currency);
     await createDummyUser(internalServerErrorUser.memberId, internalServerErrorUser.memberName, currency);
     await createDummyUser(endGameErrorUser.memberId, endGameErrorUser.memberName, currency);
+    await createDummyUser(botUser1.memberId, botUser1.memberName, currency, true);
+    await createDummyUser(botUser2.memberId, botUser2.memberName, currency, true);
 };
 
-export const createDummyUser = async (memberId, memberName, currency) => {
+export const createDummyUser = async (memberId, memberName, currency, isBot = false) => {
     const user = await createUserRecord(memberId, memberName, currency.partnerId, currency.name);
-    const userInfo = await createUserInfoRecord(user);
+    const userInfo = await createUserInfoRecord(user, isBot);
     const userSession = await createUserSessionRecord(user, currency.code, currency.groupId);
 
     return {
@@ -51,7 +57,7 @@ const createUserRecord = async (memberId, memberName, partnerId, currencyName) =
     });
 };
 
-const createUserInfoRecord = async (user) => {
+const createUserInfoRecord = async (user, isBot) => {
     const userInfo = {
         id: user.id,
         name: user.local.memberName,
@@ -61,6 +67,9 @@ const createUserInfoRecord = async (user) => {
         currency: user.local.currency,
         minBet: 10,
         maxBet: 10000,
+        type: isBot,
+        inRoom: false,
+        disabled: false,
     };
 
     return UserInfoModel.findOneAndUpdate({ id: user.id }, userInfo, {
