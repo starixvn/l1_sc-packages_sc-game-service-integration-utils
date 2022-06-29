@@ -1,3 +1,10 @@
+## [1.2.3](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.2...v1.2.3) (2022-06-29)
+
+
+### Bug Fixes
+
+* query history ([431ec21](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/431ec21ab2daa1a0b747c298008b5c6bc2bad497))
+
 ## [1.2.2](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.1...v1.2.2) (2022-06-28)
 
 
