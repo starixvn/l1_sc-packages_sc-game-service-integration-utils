@@ -1,6 +1,6 @@
 {
     "name": "sc-game-service-integration-utils",
-    "version": "1.2.3-beta.2",
+    "version": "1.2.5",
     "main": "src/index.js",
     "license": "MIT",
     "author": {

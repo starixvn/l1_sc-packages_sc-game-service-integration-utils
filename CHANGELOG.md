@@ -1,3 +1,12 @@
+## [1.2.5](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.4...v1.2.5) (2022-07-12)
+
+
+### Bug Fixes
+
+* console log error ([8d80d8c](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/8d80d8ca81d1ee15cfa1fa227bddfe3c9fa07cde))
+* update user-stub for bot ([2e2ec46](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/2e2ec46c761f7f7386af53c140e100df60a26fd0))
+* upgrade sc-game-base@3.0.2-beta.1 ([98cb6ca](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/98cb6ca9b1c12727e24a6629d7fdfd51060f838c))
+
 ## [1.2.4](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.3...v1.2.4) (2022-06-29)
 
 
