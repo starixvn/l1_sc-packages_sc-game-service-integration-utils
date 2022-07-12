@@ -111,17 +111,17 @@ export class GameClientDriver {
         });
 
         this.on(eventTypes.reconnect, () => {
-            console.logError(this.buildLog(eventTypes.reconnect));
+            console.error(this.buildLog(eventTypes.reconnect));
         });
 
         this.on(eventTypes.connectFailed, () => {
-            console.logError(this.buildLog(eventTypes.connectFailed));
+            console.error(this.buildLog(eventTypes.connectFailed));
             this.socket.disconnect();
             this.onConnectFailed(this.gameName);
         });
 
         this.on(eventTypes.connectError, (error) => {
-            console.logError(error);
+            console.error(error);
             this.socket.disconnect();
             this.onConnectFailed(this.gameName);
         });

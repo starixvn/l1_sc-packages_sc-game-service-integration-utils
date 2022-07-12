@@ -70,6 +70,7 @@ const createUserInfoRecord = async (user, isBot) => {
         type: isBot,
         inRoom: false,
         disabled: false,
+        banned: false,
     };
 
     return UserInfoModel.findOneAndUpdate({ id: user.id }, userInfo, {
