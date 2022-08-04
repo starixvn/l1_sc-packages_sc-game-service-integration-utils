@@ -1,3 +1,10 @@
+## [1.2.6](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.5...v1.2.6) (2022-08-04)
+
+
+### Bug Fixes
+
+* 1.2.8-beta.0 ([c8fa088](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/c8fa0885a41ca5247cde1c0cbb2cf261df0dad2c))
+
 ## [1.2.5](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.4...v1.2.5) (2022-07-12)
 
 
