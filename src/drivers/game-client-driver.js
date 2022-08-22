@@ -73,6 +73,10 @@ export class GameClientDriver {
         this.socket.on(eventName, eventHandler);
     }
 
+    off(eventName) {
+        this.socket.off(eventName);
+    }
+
     once(eventName, eventHandler) {
         this.socket.once(eventName, eventHandler);
     }
