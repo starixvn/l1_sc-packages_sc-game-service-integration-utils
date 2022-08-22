@@ -1,3 +1,10 @@
+# [1.3.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.6...v1.3.0) (2022-08-22)
+
+
+### Features
+
+* support socket off ([69abb00](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/69abb0091243dcba2ea7bf02d983d3c239f24e5d))
+
 ## [1.2.6](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.5...v1.2.6) (2022-08-04)
 
 
