@@ -11,11 +11,11 @@ const actions = {
 };
 
 export const initAPIStub = (apiUrl) => {
-    const normalUserRequestBody = { ObCustId: normalUser.memberId, PlayerId: normalUser.memberId };
-    const errorUserRequestBody = { ObCustId: errorUser.memberId, PlayerId: errorUser.memberId };
-    const internalServerErrorUserRequestBody = { ObCustId: internalServerErrorUser.memberId, PlayerId: internalServerErrorUser.memberId };
+    const normalUserRequestBody = { PlayerId: normalUser.memberId };
+    const errorUserRequestBody = { PlayerId: errorUser.memberId };
+    const internalServerErrorUserRequestBody = { PlayerId: internalServerErrorUser.memberId };
     const successResult = { errorCode: 0, errorDescription: "Success" };
-    const endGameErrorUserRequestBody = { ObCustId: endGameErrorUser.memberId, PlayerId: endGameErrorUser.memberId };
+    const endGameErrorUserRequestBody = { PlayerId: endGameErrorUser.memberId };
 
     nock(apiUrl)
         .persist()
