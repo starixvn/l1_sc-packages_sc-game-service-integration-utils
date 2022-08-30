@@ -1,3 +1,10 @@
+## [1.3.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.0...v1.3.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* remove ObCustId ([e75f160](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/e75f160b1b4cadadddb4cdcc07dae3cf9d1f3906))
+
 # [1.3.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.2.6...v1.3.0) (2022-08-22)
 
 
