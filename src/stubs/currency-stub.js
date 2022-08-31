@@ -18,6 +18,7 @@ const createCurrency = async (groupId, operatorId, currencyCode, currencyName) =
         enabled: true,
         isTest: false,
         groupId: groupId,
+        partnerId: operatorId,
         operatorId: operatorId,
     };
 
