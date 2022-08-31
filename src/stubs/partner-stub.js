@@ -1,14 +1,13 @@
 import { PartnerConfigs } from "sc-game-base/src/core/models";
 
-export const createPartnerConfig = async (gameId, partnerId = "dummy-partner-id") => {
+export const createPartnerConfig = async (gameId, operatorId = "dummy-operator-id") => {
     const partnerConfig = {
-        partnerId: partnerId,
-        operatorId: partnerId,
+        operatorId: operatorId,
         type: "game_site_exclusions",
         value: {
             [gameId]: ["test"],
         },
     };
 
-    return PartnerConfigs.findOneAndUpdate({ partnerId: partnerId }, partnerConfig, { new: true, upsert: true });
+    return PartnerConfigs.findOneAndUpdate({ operatorId: operatorId }, partnerConfig, { new: true, upsert: true });
 };
