@@ -11,11 +11,11 @@ const actions = {
 };
 
 export const initAPIStub = (apiUrl) => {
-    const normalUserRequestBody = { PlayerId: normalUser.memberId };
-    const errorUserRequestBody = { PlayerId: errorUser.memberId };
-    const internalServerErrorUserRequestBody = { PlayerId: internalServerErrorUser.memberId };
+    const normalUserRequestBody = { PlayerId: normalUser.playerId };
+    const errorUserRequestBody = { PlayerId: errorUser.playerId };
+    const internalServerErrorUserRequestBody = { PlayerId: internalServerErrorUser.playerId };
     const successResult = { errorCode: 0, errorDescription: "Success" };
-    const endGameErrorUserRequestBody = { PlayerId: endGameErrorUser.memberId };
+    const endGameErrorUserRequestBody = { PlayerId: endGameErrorUser.playerId };
 
     nock(apiUrl)
         .persist()
@@ -40,17 +40,15 @@ export const initAPIStub = (apiUrl) => {
                 balance: 24250,
                 ...successResult,
                 obTransId: 1763178465,
-                obCustId: normalUser.memberId,
                 minBet: 1,
                 maxBet: 2000,
-                playerId: normalUser.memberId,
+                playerId: normalUser.playerId,
             },
         })
         .post(actions.endGame, matches(normalUserRequestBody))
         .reply(200, {
             result: {
-                obCustId: normalUser.memberId,
-                playerId: normalUser.memberId,
+                playerId: normalUser.playerId,
                 ...successResult,
             },
         })
@@ -71,8 +69,7 @@ export const initAPIStub = (apiUrl) => {
                 balance: 24250,
                 ...successResult,
                 obTransId: 1763178465,
-                obCustId: endGameErrorUser.memberId,
-                playerId: endGameErrorUser.memberId,
+                playerId: endGameErrorUser.playerId,
                 minBet: 1,
                 maxBet: 2000,
             },

@@ -14,7 +14,7 @@ export const stubUserService = async (appConfigs, users = null) => {
 
     await Promise.all(
         matchedUsers.map(async (user) => {
-            const userSession = await UserSessionModel.findOne({ sessionId: `${user.memberId}-session-id` })
+            const userSession = await UserSessionModel.findOne({ sessionId: `${user.playerId}-session-id` })
                 .lean()
                 .exec();
 

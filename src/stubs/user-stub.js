@@ -1,28 +1,28 @@
 import { userInfos as UserInfoModel, users as UserModel, userSessions as UserSessionModel } from "sc-base-database";
 
-export const normalUser = { memberId: 1, memberName: "NormalUser" };
+export const normalUser = { playerId: 1, playerName: "NormalUser" };
 
-export const errorUser = { memberId: 2, memberName: "ErrorUser" };
+export const errorUser = { playerId: 2, playerName: "ErrorUser" };
 
-export const internalServerErrorUser = { memberId: 3, memberName: "InternalServerErrorUser" };
+export const internalServerErrorUser = { playerId: 3, playerName: "InternalServerErrorUser" };
 
-export const endGameErrorUser = { memberId: 4, memberName: "EndGameErrorUser" };
+export const endGameErrorUser = { playerId: 4, playerName: "EndGameErrorUser" };
 
-export const botUser1 = { memberId: 5, memberName: "Bot1" };
+export const botUser1 = { playerId: 5, playerName: "Bot1" };
 
-export const botUser2 = { memberId: 6, memberName: "Bot2" };
+export const botUser2 = { playerId: 6, playerName: "Bot2" };
 
 export const createDummyUsers = async (currency) => {
-    await createDummyUser(normalUser.memberId, normalUser.memberName, currency);
-    await createDummyUser(errorUser.memberId, errorUser.memberName, currency);
-    await createDummyUser(internalServerErrorUser.memberId, internalServerErrorUser.memberName, currency);
-    await createDummyUser(endGameErrorUser.memberId, endGameErrorUser.memberName, currency);
-    await createDummyUser(botUser1.memberId, botUser1.memberName, currency, true);
-    await createDummyUser(botUser2.memberId, botUser2.memberName, currency, true);
+    await createDummyUser(normalUser.playerId, normalUser.playerName, currency);
+    await createDummyUser(errorUser.playerId, errorUser.playerName, currency);
+    await createDummyUser(internalServerErrorUser.playerId, internalServerErrorUser.playerName, currency);
+    await createDummyUser(endGameErrorUser.playerId, endGameErrorUser.playerName, currency);
+    await createDummyUser(botUser1.playerId, botUser1.playerName, currency, true);
+    await createDummyUser(botUser2.playerId, botUser2.playerName, currency, true);
 };
 
-export const createDummyUser = async (memberId, memberName, currency, isBot = false) => {
-    const user = await createUserRecord(memberId, memberName, currency.partnerId, currency.name);
+export const createDummyUser = async (playerId, playerName, currency, isBot = false) => {
+    const user = await createUserRecord(playerId, playerName, currency.operatorId, currency.name);
     const userInfo = await createUserInfoRecord(user, isBot);
     const userSession = await createUserSessionRecord(user, currency.code, currency.groupId);
 
@@ -33,25 +33,25 @@ export const createDummyUser = async (memberId, memberName, currency, isBot = fa
     };
 };
 
-const createUserRecord = async (memberId, memberName, partnerId, currencyName) => {
+const createUserRecord = async (playerId, playerName, operatorId, currencyName) => {
     const user = {
         local: {
-            username: `${memberId}_${memberName}`,
+            username: `${playerId}_${playerName}`,
             password: "dummy-password",
             lastDate: new Date(),
             lastLogin: new Date(),
             regDate: new Date(),
-            partnerId: partnerId,
-            memberId: memberId,
-            memberName: memberName,
             currency: currencyName,
-            operatorId: partnerId,
-            playerId: memberId,
-            playerName: memberName,
+            operatorId: operatorId,
+            playerId: playerId,
+            playerName: playerName,
+            partnerId: operatorId,
+            memberId: playerId,
+            memberName: playerName,
         },
     };
 
-    return UserModel.findOneAndUpdate({ "local.memberId": memberId }, user, {
+    return UserModel.findOneAndUpdate({ "local.playerId": playerId }, user, {
         new: true,
         upsert: true,
     });
@@ -60,8 +60,8 @@ const createUserRecord = async (memberId, memberName, partnerId, currencyName) =
 const createUserInfoRecord = async (user, isBot) => {
     const userInfo = {
         id: user.id,
-        name: user.local.memberName,
-        UID: user.local.memberId,
+        name: user.local.playerName,
+        UID: user.local.playerId,
         red: 20000,
         avatarId: 1,
         currency: user.local.currency,
@@ -81,13 +81,12 @@ const createUserInfoRecord = async (user, isBot) => {
 
 const createUserSessionRecord = async (user, currencyCode, currencyGroupId) => {
     const userSession = {
-        ssoToken: `${user.local.memberId}-sso-token`,
-        sessionId: `${user.local.memberId}-session-id`,
+        ssoToken: `${user.local.playerId}-sso-token`,
+        sessionId: `${user.local.playerId}-session-id`,
         siteId: "111",
         userId: user.id,
         username: user.local.username,
         owSeq: "1,1,1w",
-        memberId: user.local.memberId,
         ssoTime: new Date(),
         recheckInTime: new Date(),
         ip: "192.168.1.1",
@@ -96,15 +95,16 @@ const createUserSessionRecord = async (user, currencyCode, currencyGroupId) => {
         currencyCode,
         currencyName: user.local.currency,
         currencyGroupId,
-        partnerId: user.local.partnerId,
         isTestCurrency: false,
         multiplier: 1,
-        memberName: user.local.memberName,
         siteName: "site-name",
         system: 1,
-        operatorId: user.local.partnerId,
-        playerId: user.local.memberId,
-        playerName: user.local.memberName,
+        operatorId: user.local.operatorId,
+        playerId: user.local.playerId,
+        playerName: user.local.playerName,
+        memberId: user.local.playerId,
+        partnerId: user.local.operatorId,
+        memberName: user.local.playerName,
     };
 
     return UserSessionModel.findOneAndUpdate({ userId: user.id }, userSession, {
