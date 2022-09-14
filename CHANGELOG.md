@@ -1,3 +1,12 @@
+## [1.3.2](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.1...v1.3.2) (2022-09-14)
+
+
+### Bug Fixes
+
+* add back old fields ([5d77399](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/5d77399c2fa5ab4749f66ff9c00f42308517f5c7))
+* update terms ([a29df2f](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/a29df2fba4b1e7d9f73485e0c1c712ca17294e76))
+* update terms ([0627d57](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/0627d57ddabae8213851f46b31ed0ef36a24951f))
+
 ## [1.3.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.0...v1.3.1) (2022-08-30)
 
 
