@@ -1,3 +1,10 @@
+## [1.3.4](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.3...v1.3.4) (2022-10-24)
+
+
+### Bug Fixes
+
+* upgrade sc-game-base@3.2.2 - fix issue update game data chips ([39cee9f](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/39cee9fa501c66cc1becea21bc5cb70554403453))
+
 ## [1.3.3](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.2...v1.3.3) (2022-09-26)
 
 
