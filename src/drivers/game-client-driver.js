@@ -17,8 +17,6 @@ export const eventTypes = {
     getStatistics: "getStatistics",
 };
 
-const WAITING_PLACE_BET_TIMEOUT = 10000;
-
 export class GameClientDriver {
     socket;
     gameName;
@@ -49,24 +47,12 @@ export class GameClientDriver {
         this.socket && this.socket.disconnect();
     }
 
-    handleSignedInEvent(eventHandler) {
-        this.on(eventTypes.signedIn, eventHandler);
+    async handleSignedInEvent() {
+        return this.waitForEvent(eventTypes.signedIn);
     }
 
-    handleInGameEvent(eventHandler) {
-        this.on(this.gameName, eventHandler);
-    }
-
-    handleEndBetEvent(eventHandler) {
-        this.on(this.gameName, eventHandler);
-    }
-
-    handleGetHistoryEvent(eventHandler) {
-        this.on(this.gameName, eventHandler);
-    }
-
-    handleEndGameEvent(eventHandler) {
-        this.on(this.gameName, eventHandler);
+    async handleGameEvent(completeCondition) {
+        return this.waitForEvent(this.gameName, completeCondition);
     }
 
     on(eventName, eventHandler) {
@@ -83,6 +69,16 @@ export class GameClientDriver {
 
     removeListener(eventName, handler) {
         this.socket.removeListener(eventName, handler);
+    }
+
+    async waitForEvent(eventName, completeCondition) {
+        return new Promise((resolve, _) => {
+            this.socket.on(eventName, (result) => {
+                if (!completeCondition || completeCondition(result)) {
+                    resolve(result);
+                }
+            });
+        });
     }
 
     sendSignInEvent() {
