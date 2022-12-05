@@ -22,7 +22,7 @@
     "dependencies": {
         "lodash.matches": "^4.6.0",
         "nock": "^13.2.1",
-        "sc-game-base": "3.2.3",
+        "sc-game-base": "3.2.5",
         "socket.io-client": "^4.4.0"
     },
     "devDependencies": {
