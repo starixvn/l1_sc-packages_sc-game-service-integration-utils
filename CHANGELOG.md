@@ -1,3 +1,10 @@
+## [1.3.6](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.5...v1.3.6) (2023-03-15)
+
+
+### Bug Fixes
+
+* make function async, await ([c13c695](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/c13c6959431f963865ddb1ba48fc598286fd8ace))
+
 ## [1.3.5](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.4...v1.3.5) (2022-10-28)
 
 
