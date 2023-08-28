@@ -2251,6 +2251,11 @@ engine.io-parser@~5.0.3:
   resolved "http://npm.lumigame.com/engine.io-parser/-/engine.io-parser-5.0.6.tgz#7811244af173e157295dec9b2718dfe42a64ef45"
   integrity sha512-tjuoZDMAdEhVnSFleYPCtdL2GXwVTGtNjoeJd9IhIG3C1xs9uwxqRNEu5WpnDZCaozwVlK/nuQhpodhXSIMaxw==
 
+engine.io-parser@~5.2.1:
+  version "5.2.1"
+  resolved "http://npm.lumigame.com/engine.io-parser/-/engine.io-parser-5.2.1.tgz#9f213c77512ff1a6cc0c7a86108a7ffceb16fcfb"
+  integrity sha512-9JktcM3u18nU9N2Lz3bWeBgxVgOKpw7yhRaoxQA3FUDZzzw+9WlA6p4G4u0RixNkg14fH7EfEc/RhpurtiROTQ==
+
 engine.io@~6.1.0:
   version "6.1.0"
   resolved "http://npm.lumigame.com/engine.io/-/engine.io-6.1.0.tgz#459eab0c3724899d7b63a20c3a6835cf92857939"
@@ -2297,6 +2302,22 @@ engine.io@~6.4.1:
     cors "~2.8.5"
     debug "~4.3.1"
     engine.io-parser "~5.0.3"
+    ws "~8.11.0"
+
+engine.io@~6.5.2:
+  version "6.5.2"
+  resolved "http://npm.lumigame.com/engine.io/-/engine.io-6.5.2.tgz#769348ced9d56bd47bd83d308ec1c3375e85937c"
+  integrity sha512-IXsMcGpw/xRfjra46sVZVHiSWo/nJ/3g1337q9KNXtS6YRzbW5yIzTCb9DjhrBe7r3GZQR0I4+nq+4ODk5g/cA==
+  dependencies:
+    "@types/cookie" "^0.4.1"
+    "@types/cors" "^2.8.12"
+    "@types/node" ">=10.0.0"
+    accepts "~1.3.4"
+    base64id "2.0.0"
+    cookie "~0.4.1"
+    cors "~2.8.5"
+    debug "~4.3.1"
+    engine.io-parser "~5.2.1"
     ws "~8.11.0"
 
 env-ci@^5.0.0:
@@ -5208,10 +5229,10 @@ sc-common@1.8.1:
     mongoose-long "^0.3.0"
     numeral "^2.0.6"
 
-sc-game-base@4.0.1-beta.0:
-  version "4.0.1-beta.0"
-  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-4.0.1-beta.0.tgz#1bae6b3df57eb556ebc3f1f97a0c3fec05bf1deb"
-  integrity sha512-9RuJ9FmiqjUi+xz1lFMqfVx5lMvIGHtW0P51nx580YomT9/ewrzq7UL/Q3Us59/2mIHUm2vlKxvOH1arJp9fpA==
+sc-game-base@4.0.1-beta.1:
+  version "4.0.1-beta.1"
+  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-4.0.1-beta.1.tgz#8b0a30ac4bf7d5908101bed0c63372fbc9408c63"
+  integrity sha512-qjtHnaYrD34tcKFka+DP5GX0CxCUElBfmCuuNhznMccaQqZFAX2cPDNGKZw8qy0un9pAsFqSjctjCsM/3FKPxw==
   dependencies:
     awilix "^8.0.0"
     axios "^1.0.0"
@@ -5228,9 +5249,19 @@ sc-game-base@4.0.1-beta.0:
     sc-base-database "1.11.1"
     sc-common "1.8.1"
     sc-instrument "0.0.1-beta.16"
+    sc-instrument-helper "^0.0.1-beta.1"
     socket.io "^4.5.4"
     socket.io-msgpack-parser "^3.0.1"
     socket.io-prom-metrics "^1.0.3"
+
+sc-instrument-helper@^0.0.1-beta.1:
+  version "0.0.1-beta.1"
+  resolved "http://npm.lumigame.com/sc-instrument-helper/-/sc-instrument-helper-0.0.1-beta.1.tgz#810da320b26e050b85061370b1b6b55ab7ec3521"
+  integrity sha512-7ePfh7wnlZWk00aIvsc7VY7HqoUZsxKdH7iGabNmyzY1cJA0gwo1KCxZsGDVN/Dznbhl2Yv+U40vSTopZuYr7A==
+  dependencies:
+    mongoose "^5.9.25"
+    socket.io "^4.1.2"
+    socket.io-msgpack-parser "^3.0.1"
 
 sc-instrument@0.0.1-beta.16:
   version "0.0.1-beta.16"
@@ -5492,6 +5523,14 @@ socket.io-parser@~4.2.1:
     "@socket.io/component-emitter" "~3.1.0"
     debug "~4.3.1"
 
+socket.io-parser@~4.2.4:
+  version "4.2.4"
+  resolved "http://npm.lumigame.com/socket.io-parser/-/socket.io-parser-4.2.4.tgz#c806966cf7270601e47469ddeec30fbdfda44c83"
+  integrity sha512-/GbIKmo8ioc+NIWIhwdecY0ge+qVBSMdgxGygevmdHj24bsfgtCmcUUcQ5ZzcylGFHsN3k4HB4Cgkl96KVnuew==
+  dependencies:
+    "@socket.io/component-emitter" "~3.1.0"
+    debug "~4.3.1"
+
 socket.io-prom-metrics@^1.0.3:
   version "1.0.3"
   resolved "http://npm.lumigame.com/socket.io-prom-metrics/-/socket.io-prom-metrics-1.0.3.tgz#c4865d821814a19a254f02caca3ac55fae58d907"
@@ -5511,6 +5550,19 @@ socket.io@4.6.1:
     engine.io "~6.4.1"
     socket.io-adapter "~2.5.2"
     socket.io-parser "~4.2.1"
+
+socket.io@^4.1.2:
+  version "4.7.2"
+  resolved "http://npm.lumigame.com/socket.io/-/socket.io-4.7.2.tgz#22557d76c3f3ca48f82e73d68b7add36a22df002"
+  integrity sha512-bvKVS29/I5fl2FGLNHuXlQaUH/BlzX1IN6S+NKLNZpBsPZIDH+90eQmCs2Railn4YUiww4SzUedJ6+uzwFnKLw==
+  dependencies:
+    accepts "~1.3.4"
+    base64id "~2.0.0"
+    cors "~2.8.5"
+    debug "~4.3.2"
+    engine.io "~6.5.2"
+    socket.io-adapter "~2.5.2"
+    socket.io-parser "~4.2.4"
 
 socket.io@^4.1.3:
   version "4.4.0"
