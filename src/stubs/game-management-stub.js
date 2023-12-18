@@ -16,6 +16,7 @@ export const subGameManagementService = async (appConfigs, definition) => {
     stubBots(appConfigs);
     stubUserStakeLevel(appConfigs);
     stubDomains(appConfigs);
+    await stubAggregation(appConfigs, definition);
 };
 
 const buildResult = (data) => {
@@ -27,9 +28,22 @@ const buildResult = (data) => {
     };
 };
 
+const stubAggregation = async (appConfigs, definition) => {
+    const data = {
+        currencyGroupGames: await CurrencyGroupGames.find({}).lean().exec(),
+        partnerGameSiteExclusions: await PartnerConfigs.find({}).lean().exec(),
+        currencyGroups: await CurrencyGroups.find({}).lean().exec(),
+        currencies: await Currencies.find({}).lean().exec(),
+    };
+
+    nock(appConfigs.gameManagementApiSettings.BASE)
+        .persist()
+        .get(`/aggregation/get-setting-for-new-round?gameId=${definition.id}`, () => true)
+        .reply(200, buildResult(data));
+};
+
 const stubGameConfig = async (appConfigs, definition) => {
     const data = await GameConfigModel.findOne({ name: definition.configName }).lean().exec();
-
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
         .get(`/game-configs?gameName=${definition.configName}`, () => true)
