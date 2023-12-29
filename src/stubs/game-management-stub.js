@@ -1,9 +1,9 @@
 import nock from "nock";
-import { userInfos as UserInfoModel } from "sc-base-database";
+import { userInfos as UserInfoModel, gameConfigs as GameConfigModel } from "sc-base-database";
 import { Currencies, CurrencyGroups, CurrencyGroupGames, PartnerConfigs } from "sc-game-base/src/core/models";
 
 export const subGameManagementService = async (appConfigs, definition) => {
-    stubGameConfig(appConfigs, definition);
+    await stubGameConfig(appConfigs, definition);
     stubArchiveStatus(appConfigs, definition);
     stubNotification(appConfigs, definition);
     stubExchangeRate(appConfigs);
@@ -27,35 +27,8 @@ const buildResult = (data) => {
     };
 };
 
-const stubGameConfig = (appConfigs, definition) => {
-    const data = {
-        name: definition.configName,
-        bot_maxbet: 1000,
-        bot_minbet: 1,
-        botenabled: false,
-        choices_maxbet: {
-            spade: 3000,
-            heart: 3000,
-            club: 3000,
-            diamond: 3000,
-        },
-        delayStartTime: 0,
-        disabled_message: "This game is under maintenance11111, it will be back shortly to upgrade new version.",
-        disabledround: 1,
-        enabled: true,
-        hour_maxbot: Array(24).fill(1),
-        maxbet: 3000,
-        maxbot: 0,
-        minbet: 1,
-        odds: {
-            sixDevil: 7,
-            twin: 6,
-            small: 5,
-            big: 4,
-            qiuQiu: 3,
-            ordinaryCard: 2,
-        },
-    };
+const stubGameConfig = async (appConfigs, definition) => {
+    const data = await GameConfigModel.findOne({ name: definition.configName }).lean().exec();
 
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
@@ -194,7 +167,8 @@ const stubBots = (appConfigs) => {
         .reply(200, buildResult({}));
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
-        .get(`/users/bots`, () => true)
+        .get(`/users/bots`)
+        .query(true)
         .reply(200, buildResult([{ id: 333, name: "bot", avatarId: 1, red: 2000 }]));
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
