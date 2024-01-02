@@ -171,6 +171,7 @@ const stubUserInfo = async (appConfigs) => {
 };
 
 const stubBots = (appConfigs) => {
+    const bots = [{ id: 333, name: "bot", avatarId: 1, red: 2000 }];
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
         .post(`/users/bots/reset-in-room`, () => true)
@@ -179,11 +180,7 @@ const stubBots = (appConfigs) => {
         .persist()
         .post(`/users/bots/out-room`, () => true)
         .reply(200, buildResult({}));
-    nock(appConfigs.gameManagementApiSettings.BASE)
-        .persist()
-        .get(`/users/bots`)
-        .query(true)
-        .reply(200, buildResult([{ id: 333, name: "bot", avatarId: 1, red: 2000 }]));
+    nock(appConfigs.gameManagementApiSettings.BASE).persist().get(`/users/bots`).query(true).reply(200, buildResult(bots));
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
         .get(`/users/bots/total`, () => true)
@@ -196,6 +193,10 @@ const stubBots = (appConfigs) => {
         .persist()
         .post(`/users/bots/join-room`, () => true)
         .reply(200, buildResult({}));
+    nock(appConfigs.gameManagementApiSettings.BASE)
+        .persist()
+        .post(`/users/update-bots-balance`, () => true)
+        .reply(200, buildResult(bots));
 };
 
 const stubPromotion = (appConfigs, definition) => {

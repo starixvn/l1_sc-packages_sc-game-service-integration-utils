@@ -5258,10 +5258,10 @@ sc-common@1.8.1:
     mongoose-long "^0.3.0"
     numeral "^2.0.6"
 
-sc-game-base@4.1.1-beta.52:
-  version "4.1.1-beta.52"
-  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-4.1.1-beta.52.tgz#51020e133ef92a72df0195f89ad5ad8e5cb6652d"
-  integrity sha512-r/YY+0unGjiF6Mjxjff1TExs+g07g+pOwsaP9JZyl9VhAg0GGmVbH2JJABvopG3upQjmQOt2fuYFwK3MHGDkOA==
+sc-game-base@4.1.1-beta.57:
+  version "4.1.1-beta.57"
+  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-4.1.1-beta.57.tgz#65d17de04e0612316218ab288e822a0a790e2b4f"
+  integrity sha512-nY9y6rQf5ecVCHg9gPywMEcAx+igO4Fj2aYfFo7FKtZ0v1rzVzyPjwt8bvPrlrdaAVfhlA+P9Zk61l1Kwxfp8w==
   dependencies:
     awilix "^8.0.0"
     axios "^1.0.0"
@@ -5277,17 +5277,17 @@ sc-game-base@4.1.1-beta.52:
     sc-base-apis "1.18.2-beta.3"
     sc-base-database "1.11.1"
     sc-common "1.8.1"
-    sc-game-management-client "^0.0.2-beta.21"
+    sc-game-management-client "^0.0.2-beta.22"
     sc-instrument "1.1.1-beta.2"
     sc-instrument-helper "1.0.0"
     socket.io "^4.5.4"
     socket.io-msgpack-parser "^3.0.1"
     socket.io-prom-metrics "^1.0.3"
 
-sc-game-management-client@^0.0.2-beta.21:
-  version "0.0.2-beta.21"
-  resolved "http://npm.lumigame.com/sc-game-management-client/-/sc-game-management-client-0.0.2-beta.21.tgz#bf802cf8daf1726f253689f6a7392bf6e1a8d2f9"
-  integrity sha512-sUpKKgXf2enHDVXoHLgd5bDhwJPfLzxzLZZ7Jnxv+yUuape8NIkdgL4irJpHH6RGrp8XLMLeJ2HkVCjzS1R06g==
+sc-game-management-client@^0.0.2-beta.22:
+  version "0.0.2-beta.22"
+  resolved "http://npm.lumigame.com/sc-game-management-client/-/sc-game-management-client-0.0.2-beta.22.tgz#3bf20fd2b3b0ec12b65b385e3a65da69ba7c8609"
+  integrity sha512-BLdDwZzAZFvPQEoMu+CN9Hhi+puNXxUIC+4HNj3u3MHhzkrSHUaCOl7Api2kZQB/eSIKByTx67hZX/GIuQQlwQ==
   dependencies:
     axios "1.6.2"
     axios-retry "^4.0.0"
