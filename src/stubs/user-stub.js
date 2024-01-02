@@ -9,8 +9,11 @@ export const internalServerErrorUser = { playerId: 3, playerName: "InternalServe
 export const endGameErrorUser = { playerId: 4, playerName: "EndGameErrorUser" };
 
 export const botUser1 = { playerId: 5, playerName: "Bot1" };
-
 export const botUser2 = { playerId: 6, playerName: "Bot2" };
+export const botUser3 = { playerId: 7, playerName: "Bot3" };
+export const botUser4 = { playerId: 8, playerName: "Bot4" };
+export const botUser5 = { playerId: 9, playerName: "Bot5" };
+export const botUser6 = { playerId: 10, playerName: "Bot6" };
 
 export const createDummyUsers = async (currency) => {
     await createDummyUser(normalUser.playerId, normalUser.playerName, currency);
@@ -19,6 +22,10 @@ export const createDummyUsers = async (currency) => {
     await createDummyUser(endGameErrorUser.playerId, endGameErrorUser.playerName, currency);
     await createDummyUser(botUser1.playerId, botUser1.playerName, currency, true);
     await createDummyUser(botUser2.playerId, botUser2.playerName, currency, true);
+    await createDummyUser(botUser3.playerId, botUser3.playerName, currency, true);
+    await createDummyUser(botUser4.playerId, botUser4.playerName, currency, true);
+    await createDummyUser(botUser5.playerId, botUser5.playerName, currency, true);
+    await createDummyUser(botUser6.playerId, botUser6.playerName, currency, true);
 };
 
 export const createDummyUser = async (playerId, playerName, currency, isBot = false) => {

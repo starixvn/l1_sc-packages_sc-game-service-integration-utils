@@ -13,7 +13,7 @@ export const subGameManagementService = async (appConfigs, definition) => {
     await stubCurrency(appConfigs);
     stubPromotion(appConfigs, definition);
     await stubUserInfo(appConfigs);
-    stubBots(appConfigs);
+    await stubBots(appConfigs);
     stubUserStakeLevel(appConfigs);
     stubDomains(appConfigs);
     await stubAggregation(appConfigs, definition);
@@ -170,8 +170,9 @@ const stubUserInfo = async (appConfigs) => {
         .reply(200, buildResult({}));
 };
 
-const stubBots = (appConfigs) => {
-    const bots = [{ id: 333, name: "bot", avatarId: 1, red: 2000 }];
+const stubBots = async (appConfigs) => {
+    const bots = await UserInfoModel.find({ type: true }).lean().exec();
+
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
         .post(`/users/bots/reset-in-room`, () => true)
@@ -184,7 +185,7 @@ const stubBots = (appConfigs) => {
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
         .get(`/users/bots/total`, () => true)
-        .reply(200, buildResult(1));
+        .reply(200, buildResult(bots.length));
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
         .get(`/users/bots/disabled-bots`, () => true)
@@ -196,7 +197,7 @@ const stubBots = (appConfigs) => {
     nock(appConfigs.gameManagementApiSettings.BASE)
         .persist()
         .post(`/users/update-bots-balance`, () => true)
-        .reply(200, buildResult(bots));
+        .reply(200, buildResult([bots[0]]));
 };
 
 const stubPromotion = (appConfigs, definition) => {
