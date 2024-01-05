@@ -1,3 +1,14 @@
+## [1.3.7](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.6...v1.3.7) (2024-01-05)
+
+
+### Bug Fixes
+
+* add game-management-stub ([de4fd8a](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/de4fd8ab8330079c8a32a5b9d966476db8cf9df4))
+* add more stub for game-management ([a55950d](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/a55950d3609613ebc4e8897f5cdbe147c73b317d))
+* stub aggregation ([4b5382b](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/4b5382bfe78fd30a153d2040e92067dd2cfa2af3))
+* update bots stub ([7cbff61](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/7cbff6187def2c55d63b166afcb09564d43f6baf))
+* update stub game-management-api ([289712e](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/289712e6f735b1022ff73f1c6e39a8b16610e62b))
+
 ## [1.3.6](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.5...v1.3.6) (2023-03-15)
 
 
