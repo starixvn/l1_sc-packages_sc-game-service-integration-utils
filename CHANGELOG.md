@@ -1,3 +1,10 @@
+## [1.3.9](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.8...v1.3.9) (2024-01-17)
+
+
+### Bug Fixes
+
+* update ([42c5fc3](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/42c5fc32708ae37df771d676bfd026abe1302692))
+
 ## [1.3.7](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.6...v1.3.7) (2024-01-05)
 
 
