@@ -1,3 +1,15 @@
+# [2.0.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.9...v2.0.0) (2024-01-19)
+
+
+### Features
+
+* upgrade sc-game-base@5.0.0 ([98daefb](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/98daefb3d24fb898225cf40dfa739ad7c3bd3328))
+
+
+### BREAKING CHANGES
+
+* sc-game-base@5.0.0
+
 ## [1.3.9](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v1.3.8...v1.3.9) (2024-01-17)
 
 
