@@ -5230,10 +5230,10 @@ sc-api-client@1.4.0:
   dependencies:
     axios "^0.19.2"
 
-sc-base-apis@1.18.2-beta.3:
-  version "1.18.2-beta.3"
-  resolved "http://npm.lumigame.com/sc-base-apis/-/sc-base-apis-1.18.2-beta.3.tgz#acba203a63e54a9260f3e60af83e32f7bd54dc39"
-  integrity sha512-h/IRZNId5rrWp+meWIxNqVXov5a9KNtO2nu+P6kCsQOKxDTgU1YkYhw4gi1GUrDaIcMpu+NrQnLdIGZdwmhnIQ==
+sc-base-apis@2.0.0:
+  version "2.0.0"
+  resolved "https://npm.lumigame.com/sc-base-apis/-/sc-base-apis-2.0.0.tgz#00b85b6b2fbef2d25877e5276a17bd47efda2c2c"
+  integrity sha512-f9UX4fuKkAW5hRY5V7aHvKTerdo7dYsnR0TcuDT4brTLuEphLFfOYakQ9414gu6/EI17qaRLvxyJhkJ5x8E9rw==
   dependencies:
     moment "^2.29.4"
     sc-api-client "1.4.0"
@@ -5258,10 +5258,10 @@ sc-common@1.8.1:
     mongoose-long "^0.3.0"
     numeral "^2.0.6"
 
-sc-game-base@4.1.1-beta.57:
-  version "4.1.1-beta.57"
-  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-4.1.1-beta.57.tgz#65d17de04e0612316218ab288e822a0a790e2b4f"
-  integrity sha512-nY9y6rQf5ecVCHg9gPywMEcAx+igO4Fj2aYfFo7FKtZ0v1rzVzyPjwt8bvPrlrdaAVfhlA+P9Zk61l1Kwxfp8w==
+sc-game-base@5.0.0:
+  version "5.0.0"
+  resolved "https://npm.lumigame.com/sc-game-base/-/sc-game-base-5.0.0.tgz#f4051db11140bf6478ec868b9fc4a1f51d267e5f"
+  integrity sha512-ldUaY6w0TmSJ8+WOqq088zPxDpsRa6ErPW/BlWwnTTWGd3/vFJg0GSN6G/j88LV82uv2FPcG9T+aakq3mRGirg==
   dependencies:
     awilix "^8.0.0"
     axios "^1.0.0"
@@ -5274,7 +5274,7 @@ sc-game-base@4.1.1-beta.57:
     mongoose "^5.9.25"
     morgan "^1.10.0"
     openid-client "^5.0.0"
-    sc-base-apis "1.18.2-beta.3"
+    sc-base-apis "2.0.0"
     sc-base-database "1.11.1"
     sc-common "1.8.1"
     sc-game-management-client "^0.0.2-beta.22"
@@ -5321,10 +5321,10 @@ sc-instrument@1.1.1-beta.2:
     opentelemetry-instrumentation-socket.io "0.34.0"
     socket.io "4.6.1"
 
-sc-semantic-release@^1.2.0:
-  version "1.2.0"
-  resolved "http://npm.lumigame.com/sc-semantic-release/-/sc-semantic-release-1.2.0.tgz#52ea7bd1aa4d5c41315a16c2c4e4f0437befdbcb"
-  integrity sha512-izZqZiS8hL05cGzYbcR3+GZ1Oktr9rU1nIL05S9mZnEBm5nZfqzRkSpR2OHVJARjYsMI5dps0oUX1HjFV9x47w==
+sc-semantic-release@^1.3.0:
+  version "1.3.0"
+  resolved "https://npm.lumigame.com/sc-semantic-release/-/sc-semantic-release-1.3.0.tgz#3f1a98887fce528031e0891f376f5e8e0cb9c731"
+  integrity sha512-mbqN7ehzwVELq0aAns4ONTPMGkJh6pDgfA+2r3DiRVVX1viiVRbj3zpxT5yhSB8KuKE5hbUAgULYAEH+fsEBMg==
 
 semantic-release@^17.4.7:
   version "17.4.7"
