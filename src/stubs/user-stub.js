@@ -1,19 +1,19 @@
 import { userInfos as UserInfoModel, users as UserModel, userSessions as UserSessionModel } from "sc-base-database";
 
-export const normalUser = { playerId: 1, playerName: "NormalUser" };
+export const normalUser = { playerId: "1", playerName: "NormalUser" };
 
-export const errorUser = { playerId: 2, playerName: "ErrorUser" };
+export const errorUser = { playerId: "2", playerName: "ErrorUser" };
 
-export const internalServerErrorUser = { playerId: 3, playerName: "InternalServerErrorUser" };
+export const internalServerErrorUser = { playerId: "3", playerName: "InternalServerErrorUser" };
 
-export const endGameErrorUser = { playerId: 4, playerName: "EndGameErrorUser" };
+export const endGameErrorUser = { playerId: "4", playerName: "EndGameErrorUser" };
 
-export const botUser1 = { playerId: 5, playerName: "Bot1" };
-export const botUser2 = { playerId: 6, playerName: "Bot2" };
-export const botUser3 = { playerId: 7, playerName: "Bot3" };
-export const botUser4 = { playerId: 8, playerName: "Bot4" };
-export const botUser5 = { playerId: 9, playerName: "Bot5" };
-export const botUser6 = { playerId: 10, playerName: "Bot6" };
+export const botUser1 = { playerId: "5", playerName: "Bot1" };
+export const botUser2 = { playerId: "6", playerName: "Bot2" };
+export const botUser3 = { playerId: "7", playerName: "Bot3" };
+export const botUser4 = { playerId: "8", playerName: "Bot4" };
+export const botUser5 = { playerId: "9", playerName: "Bot5" };
+export const botUser6 = { playerId: "10", playerName: "Bot6" };
 
 export const createDummyUsers = async (currency) => {
     await createDummyUser(normalUser.playerId, normalUser.playerName, currency);
