@@ -1,4 +1,4 @@
-import { PartnerConfigs } from "sc-game-base/src/core/models";
+import { PartnerConfigs } from "sc-base-database";
 
 export const createPartnerConfig = async (gameId, operatorId = "dummy-operator-id") => {
     const partnerConfig = {

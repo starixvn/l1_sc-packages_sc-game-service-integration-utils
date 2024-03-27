@@ -1,4 +1,4 @@
-import { ExchangeRates } from "sc-game-base/src/core/models";
+import { ExchangeRates } from "sc-base-database";
 
 export const createExchangeRate = async () => {
     const exchangeRate = {

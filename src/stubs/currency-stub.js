@@ -1,4 +1,4 @@
-import { Currencies, CurrencyGroups } from "sc-game-base/src/core/models";
+import { Currencies, CurrencyGroups } from "sc-base-database";
 
 export const createDummyCurrency = async (operatorId, currencyCode = "USD", currencyName = "$US") => {
     const currencyGroup = await createCurrencyGroup(operatorId);

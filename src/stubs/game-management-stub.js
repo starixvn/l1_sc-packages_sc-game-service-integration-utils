@@ -1,6 +1,5 @@
 import nock from "nock";
-import { userInfos as UserInfoModel, gameConfigs as GameConfigModel } from "sc-base-database";
-import { Currencies, CurrencyGroups, CurrencyGroupGames, PartnerConfigs } from "sc-game-base/src/core/models";
+import { Currencies, CurrencyGroupGames, CurrencyGroups, gameConfigs as GameConfigModel, PartnerConfigs, userInfos as UserInfoModel } from "sc-base-database";
 
 export const subGameManagementService = async (appConfigs, definition) => {
     await stubGameConfig(appConfigs, definition);
