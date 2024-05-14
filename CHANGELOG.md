@@ -1,3 +1,10 @@
+# [2.2.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v2.1.0...v2.2.0) (2024-05-14)
+
+
+### Features
+
+* remove sc-game-base from dependency ([68359e2](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/68359e2a5087c08878eebced2110d3d118c87fe5))
+
 # [2.1.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v2.0.1...v2.1.0) (2024-03-27)
 
 
