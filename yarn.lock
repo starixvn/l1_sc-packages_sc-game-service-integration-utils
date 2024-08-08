@@ -4115,10 +4115,10 @@ saslprep@^1.0.0:
   dependencies:
     sparse-bitfield "^3.0.3"
 
-sc-base-database@2.2.0:
-  version "2.2.0"
-  resolved "https://npm.lumigame.com/sc-base-database/-/sc-base-database-2.2.0.tgz#ca0e5fdf597b4e64036e4da45009129573e246db"
-  integrity sha512-MuPLlrfTdX0NG9oX/iwhv4iUHFib5cCGliD3E/oT1hGg4BjLUPURQPg0RKGt5Wt5KK6PHd9qyxXTCTFRLsL4Dg==
+sc-base-database@2.2.1:
+  version "2.2.1"
+  resolved "http://npm.lumigame.com/sc-base-database/-/sc-base-database-2.2.1.tgz#1d52510a7898546df839ff29caa7c2fd6229b63c"
+  integrity sha512-3t/eNvt6bGKeZAkU6lMb6/kpDcZlireTH+bUTwwZ1XHxQlpV9JwcIsttlXXkdiJw3/zVZ7MlPQ5Dn5aL8RfKEg==
   dependencies:
     mongoose "^5.9.25"
     sc-common "1.8.1"
