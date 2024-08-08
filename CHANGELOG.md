@@ -1,3 +1,10 @@
+## [2.2.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v2.2.0...v2.2.1) (2024-08-08)
+
+
+### Bug Fixes
+
+* update sc-base-database 2.2.1 ([a1a3a26](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/a1a3a268373541ff6d83de1f2eda223bb5554f62))
+
 # [2.2.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v2.1.0...v2.2.0) (2024-05-14)
 
 
