@@ -1,3 +1,10 @@
+# [2.3.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v2.2.1...v2.3.0) (2025-04-24)
+
+
+### Features
+
+* upgrade sc-base-database@2.2.2 ([447fffe](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/447fffe479518c2a9e273ba76c3593495f34f766))
+
 ## [2.2.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v2.2.0...v2.2.1) (2024-08-08)
 
 
