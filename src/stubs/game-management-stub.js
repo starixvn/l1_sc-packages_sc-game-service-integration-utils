@@ -1,5 +1,12 @@
 import nock from "nock";
-import { Currencies, CurrencyGroupGames, CurrencyGroups, gameConfigs as GameConfigModel, PartnerConfigs, userInfos as UserInfoModel } from "sc-base-database";
+import {
+    Currencies,
+    CurrencyGroupGames,
+    CurrencyGroups,
+    gameConfigs as GameConfigModel,
+    PartnerConfigs,
+    userInfos as UserInfoModel,
+} from "sc-base-database";
 
 export const subGameManagementService = async (appConfigs, definition) => {
     await stubGameConfig(appConfigs, definition);
@@ -16,6 +23,8 @@ export const subGameManagementService = async (appConfigs, definition) => {
     stubUserStakeLevel(appConfigs);
     stubDomains(appConfigs);
     await stubAggregation(appConfigs, definition);
+    await stubJackpotConfigs(appConfigs, definition);
+    await stubBotConfigs(appConfigs, definition);
 };
 
 const buildResult = (data) => {
@@ -197,6 +206,20 @@ const stubBots = async (appConfigs) => {
         .persist()
         .post(`/users/update-bots-balance`, () => true)
         .reply(200, buildResult([bots[0]]));
+};
+
+const stubJackpotConfigs = async (appConfigs, definition) => {
+    nock(appConfigs.gameManagementApiSettings.BASE)
+        .persist()
+        .get(`/jackpot-config/${definition.id}`, () => true)
+        .reply(200, buildResult([]));
+};
+
+const stubBotConfigs = async (appConfigs, definition) => {
+    nock(appConfigs.gameManagementApiSettings.BASE)
+        .persist()
+        .get(`/bot-config/${definition.id}`, () => true)
+        .reply(200, buildResult([]));
 };
 
 const stubPromotion = (appConfigs, definition) => {
