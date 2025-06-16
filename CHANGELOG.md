@@ -1,3 +1,10 @@
+## [2.3.1](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v2.3.0...v2.3.1) (2025-06-16)
+
+
+### Bug Fixes
+
+* add jackpot/bot configs ([229382d](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/commit/229382d383d1818430165b9d22e690ef9955a51e))
+
 # [2.3.0](https://git3.nexdev.net/l1/sc-packages/sc-game-service-integration-utils/compare/v2.2.1...v2.3.0) (2025-04-24)
 
 
