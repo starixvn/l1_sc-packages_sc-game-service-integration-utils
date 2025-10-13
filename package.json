@@ -1,6 +1,6 @@
 {
     "name": "sc-game-service-integration-utils",
-    "version": "2.3.1",
+    "version": "2.3.3-beta2",
     "main": "src/index.js",
     "license": "MIT",
     "author": {
@@ -23,7 +23,7 @@
         "lodash.matches": "^4.6.0",
         "nock": "^14.0.10",
         "socket.io-client": "^4.4.0",
-        "sc-base-database": "2.2.3"
+        "sc-base-database": "2.3.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^9.1.2",

@@ -7,4 +7,4 @@ export * from "./currency-group-games-stub";
 export * from "./currency-stub";
 export * from "./partner-stub";
 export * from "./user-service-stub";
-export * from "./init-db";
+export { init as initDB } from "sc-base-database";
