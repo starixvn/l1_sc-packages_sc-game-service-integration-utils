@@ -21,9 +21,9 @@
     },
     "dependencies": {
         "lodash.matches": "^4.6.0",
-        "nock": "^13.2.1",
+        "nock": "^14.0.10",
         "socket.io-client": "^4.4.0",
-        "sc-base-database": "2.2.2"
+        "sc-base-database": "2.2.3"
     },
     "devDependencies": {
         "@commitlint/cli": "^9.1.2",
